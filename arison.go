@@ -81,7 +81,7 @@ func arison() {
 		"use_marker_clusterer":                    "true",
 		"placesAutoComplete":                      "",
 		"q[type_use_offset_eq_any][]":             "",
-		"q[sale_or_lease_eq]":                     "lease",
+		"q[sale_or_lease_eq]":                     "",
 		"q[state_eq_any][]":                       "",
 		"q[listings_data_max_space_available_on_market_gteq]": "",
 		"q[listings_data_min_space_available_on_market_lteq]": "",
@@ -93,7 +93,7 @@ func arison() {
 		"q[s][]":                                 "max_lease_rate desc",
 	}
 
-	file, err := os.Create("scraped_urls.txt")
+	file, err := os.Create("data.txt")
 	if err != nil {
 		log.Fatal("Error creating file:", err)
 	}
@@ -151,7 +151,6 @@ func arison() {
 		}
 	}
 
-	fmt.Println("Arison finished.")
 }
 
 func mapToURLValues(m map[string]string) url.Values {

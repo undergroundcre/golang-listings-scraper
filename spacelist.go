@@ -15,7 +15,7 @@ import (
 
 type ListingData struct {
 	URL        string
-	ImageSrc       string
+	ImageSrc   string
 	Name       string
 	KeyBoldMap map[string]string
 }
@@ -45,9 +45,9 @@ func ScrapeListingsFromMainURLs() {
 		close(failedURLsChan)
 	}()
 
-	file, err := os.Create("data.txt")
+	file, err := os.OpenFile("data.txt", os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0644)
 	if err != nil {
-		log.Fatal("Error creating file:", err)
+		log.Fatal("Error opening file:", err)
 	}
 	defer file.Close()
 
@@ -58,7 +58,7 @@ func ScrapeListingsFromMainURLs() {
 	defer failedFile.Close()
 
 	// Add a ticker to track the time and determine when to pause the fetching
-	ticker := time.NewTicker(10 * time.Minute)
+	ticker := time.NewTicker(1 * time.Minute)
 	defer ticker.Stop()
 
 	for {
@@ -71,7 +71,7 @@ func ScrapeListingsFromMainURLs() {
 			} else {
 				fmt.Fprintf(file, "URL: %s\n", listing.URL)
 				fmt.Fprintf(file, "Location: %s\n", listing.Name)
-				fmt.Fprintf(file, "Photo: %s\n", listing.ImageSrc) // Add this line
+				fmt.Fprintf(file, "Photo: %s\n", listing.ImageSrc)
 				for key, boldFont := range listing.KeyBoldMap {
 					fmt.Fprintf(file, "%s | %s\n", key, boldFont)
 				}
@@ -87,8 +87,11 @@ func ScrapeListingsFromMainURLs() {
 
 		case <-ticker.C: // After every 10 minutes, pause and wait for a random duration
 			pauseDuration := 3 + rand.Intn(4) // Generates a random value between 3 to 6
-			fmt.Printf("Pausing fetching for %d minutes...\n", pauseDuration)
+			pauseTime := time.Now()
+			fmt.Printf("[%s] Pausing fetching for %d minutes...\n", pauseTime.Format(time.RFC3339), pauseDuration)
 			time.Sleep(time.Duration(pauseDuration) * time.Minute)
+			resumeTime := time.Now()
+			fmt.Printf("[%s] Resuming fetching...\n", resumeTime.Format(time.RFC3339))
 
 			if listingsChan == nil && failedURLsChan == nil {
 				return // Exit the loop if both channels are closed
@@ -130,14 +133,14 @@ func ScrapeListings(url string, listingsChan chan ListingData, failedURLsChan ch
 			href, _ := s.Attr("href")
 			hrefs = append(hrefs, href)
 		})
-		
+
 		if len(hrefs) == 0 {
 			break // No more pages
 		}
 
 		for _, href := range hrefs {
 			fullURL := href
-			
+
 			resp, err := makeRequest(fullURL, headers)
 			if err != nil {
 				log.Println("Error making request:", err)
@@ -178,7 +181,6 @@ func ScrapeListings(url string, listingsChan chan ListingData, failedURLsChan ch
 					imageSrc, _ = s.Attr("href")
 				}
 			})
-			
 
 			listingsChan <- ListingData{
 				URL:        fullURL,
@@ -191,7 +193,6 @@ func ScrapeListings(url string, listingsChan chan ListingData, failedURLsChan ch
 		page++
 	}
 }
-
 
 func makeRequest(url string, headers map[string]string) (*http.Response, error) {
 	client := &http.Client{}
@@ -211,3 +212,4 @@ func makeRequest(url string, headers map[string]string) (*http.Response, error) 
 
 	return resp, nil
 }
+
