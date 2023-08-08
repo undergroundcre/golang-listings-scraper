@@ -1,0 +1,1198 @@
+URL: https://www.avisonyoung.ca/properties/15-19-23-pearl-street-mississauga-lease
+Asset Type: Manufacturing
+Transaction Type: Lease
+Location: 15, 19, 23 Pearl Street 
+Size: 0 - 5,227 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/13963103/ca47949760ac40e39656eb4d39ede16d7ab8c651/full.jpg?1669304476
+Available: 0 - 5,227 SF
+Lease Rate: $2,500.00 - 3,500.00 SF/month (NNN)
+# of Spaces: 3 Spaces
+Building Size: 1,500 SF Bldg
+Space Type: Manufacturing
+--------------------
+URL: https://www.avisonyoung.ca/properties/325-stirling-avenue-s-kitchener-lease-1140765
+Asset Type: Other
+Transaction Type: Lease
+Location: 325 Stirling Avenue S
+Size: 3.75 Acres
+Photo: https://s3.amazonaws.com/buildout-production/datas/13952773/fdd91270ce64732297f5e6bb23774e6aace61933/full.jpg?1669139726
+Available: 3.75 Acres
+Lease Rate: $26,250.00 SF/yr (Per Month)
+# of Spaces: 1 Space
+Space Type: Other
+--------------------
+URL: https://www.avisonyoung.ca/properties/49-cork-street-e-guelph-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: 49 Cork Street E
+Size: 1,043 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15030763/de9ac650985a6ffe102ad4ad6e76144b9d3599b0/full.jpg?1682024152
+Available: 1,043 SF
+Lease Rate: $1,950.00 SF/month (NNN)
+# of Spaces: 1 Space
+Building Size: 1,043 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/7551-jane-street-vaughan-lease
+Asset Type: Warehouse/Distribution
+Transaction Type: Lease
+Location: 7551 Jane Street
+Size: 1,000 - 196,020 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15323733/274d7ea690e7a0e4f5922beed0f4434ae97210d9/full.jpg?1685471039
+Available: 1,000 - 196,020 SF
+Lease Rate: $9.95 - 15,000.00 SF/yr (NNN)
+# of Spaces: 5 Spaces
+Building Size: 100,000 SF Bldg
+Space Type: Warehouse/Distribution
+--------------------
+URL: https://www.avisonyoung.ca/properties/6501-goreway-drive-mississauga-mississauga-lease
+Asset Type: Industrial
+Transaction Type: Lease
+Location: 6501 Goreway Drive, Mississauga
+Size: 0 - 6 Acres
+Photo: https://s3.amazonaws.com/buildout-production/datas/9207222/ded5b0002b3d3ada7df58d3e2d623e5154a5f853/full.png?1622558870
+Available: 0 - 6 Acres
+Lease Rate: $14,000.00 SF/yr (Gross)
+# of Spaces: 1 Space
+Space Type: Industrial
+--------------------
+URL: https://www.avisonyoung.ca/properties/647-bedford-highway-bedford-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 647 Bedford Highway
+Size: 1,440 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/13608028/46cef78ae2d72a234de76f06d403697cff1368ca/full.jpg?1665084855
+Available: 1,440 SF
+Lease Rate: $4,995.00 SF/yr (Gross)
+# of Spaces: 1 Space
+Building Size: 1,440 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/807-gerrard-street-east-toronto-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: 807 Gerrard Street East
+Size: 820 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15469990/a517919f67a11561ab37629ea74979f4dc86b634/full.jpg?1686858397
+Available: 820 SF
+Lease Rate: $3,500.00 SF/yr (MG)
+# of Spaces: 1 Space
+Building Size: 8,035 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/3639-dutch-village-rd-halifax-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 3639 Dutch Village Rd
+Size: 800 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/13156847/808518b3d984ff1cdd548cdb7ee4f774554b793e/full.jpg?1660059280
+Available: 800 SF
+Lease Rate: $2,495.00 SF/yr (Gross)
+# of Spaces: 1 Space
+Building Size: 800 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/44-main-street-cambridge-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 44 Main Street
+Size: 1,600 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/13236684/4833964e27088980aef96208508cc5aaf23512b5/full.jpg?1660916179
+Available: 1,600 SF
+Lease Rate: $2,000.00 SF/yr (Gross)
+# of Spaces: 1 Space
+Building Size: 16,283 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/8456-129a-street-surrey-lease
+Asset Type: Flex Space
+Transaction Type: Lease
+Location: 8456 129A Street
+Size: 4,751 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15756673/c21830637303336cc468b05c914a98ac4e3eddbd/full.jpg?1690499562
+Available: 4,751 SF
+Lease Rate: $22.00 SF/month (Gross)
+# of Spaces: 1 Space
+Building Size: 4,751 SF Bldg
+Space Type: Flex Space
+--------------------
+URL: https://www.avisonyoung.ca/properties/385-frederick-street-kitchener-lease
+Asset Type: Regional Mall
+Transaction Type: Lease
+Location: 385 Frederick Street
+Size: 1,250 - 3,084 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/11737143/bcc0dc0a0d6b1f8a6def57ced297b4342f62acca/full.jpg?1644947828
+Available: 1,250 - 3,084 SF
+Lease Rate: $12.00 - 20.00 SF/month (NNN)
+# of Spaces: 3 Spaces
+Building Size: 98,620 SF Bldg
+Space Type: Regional Mall
+--------------------
+URL: https://www.avisonyoung.ca/properties/3518-wyecroft-road-oakville-lease
+Asset Type: Warehouse/Distribution
+Transaction Type: Lease
+Location: 3518 Wyecroft Road
+Size: 30,947 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/14297266/6b2ac067f05d7849a277437e9bdedaa625afd6ac/full.jpg?1674248489
+Available: 30,947 SF
+Lease Rate: $19.50 SF/month (NNN)
+# of Spaces: 1 Space
+Building Size: 30,947 SF Bldg
+Space Type: Warehouse/Distribution
+--------------------
+URL: https://www.avisonyoung.ca/properties/3000-highway-7-east-markham-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 3000 Highway 7 East
+Size: 3,825 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/3790561/f796b425dd69d0bb0af13c9b082bdb36427aadde/full.jpg?1571250695
+Available: 3,825 SF
+Lease Rate: $19.00 SF/month (NNN)
+# of Spaces: 1 Space
+Building Size: 3,825 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/1239-caledonia-road-north-york-lease
+Asset Type: Warehouse/Distribution
+Transaction Type: Lease
+Location: 1239 Caledonia Road
+Size: 15,644 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/14847751/6952abe8ef3e81e8c87639dd11ab0677dfffa844/full.jpg?1680110924
+Available: 15,644 SF
+Lease Rate: $16.95 SF/month (NNN)
+# of Spaces: 1 Space
+Building Size: 15,824 SF Bldg
+Space Type: Warehouse/Distribution
+--------------------
+URL: https://www.avisonyoung.ca/properties/5150-yonge-street-toronto-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: 5150 Yonge Street
+Size: 345 - 6,697 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/13303503/399afa9e279014b620cb123d8d4c3c9744957e1d/full.jpg?1661804781
+Available: 345 - 6,697 SF
+Lease Rate: $20.00 - 150.00 SF/yr (NN)
+# of Spaces: 9 Spaces
+Building Size: 552,257 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/4305-76-avenue-edmonton-lease
+Asset Type: Warehouse/Distribution
+Transaction Type: Lease
+Location: 4305 76 Avenue
+Size: 7,840 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/12838147/f7d924ccc3113c9779cedd1bc739849af42e518d/full.jpg?1656445455
+Available: 7,840 SF
+Lease Rate: $11.00 SF/month (NNN)
+# of Spaces: 1 Space
+Building Size: 7,840 SF Bldg
+Space Type: Warehouse/Distribution
+--------------------
+URL: https://www.avisonyoung.ca/properties/325-stirling-avenue-s-kitchener-lease
+Asset Type: Manufacturing
+Transaction Type: Lease
+Location: 325 Stirling Avenue S
+Size: 61,108 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/11586414/2d815dca8ed7c3e4d0ef957a39a28a0620524274/full.jpg?1643661687
+Available: 61,108 SF
+Lease Rate: $10.00 SF/month (NN)
+# of Spaces: 1 Space
+Building Size: 61,108 SF Bldg
+Space Type: Manufacturing
+--------------------
+URL: https://www.avisonyoung.ca/properties/-250-diamond-avenue-spruce-grove-lease
+Asset Type: Warehouse/Distribution
+Transaction Type: Lease
+Location:  250 Diamond Avenue 
+Size: 4,900 - 174,240 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15241842/3ae95bac579e264ba6ff09fa1cf9b24bc61596e9/full.png?1684340742
+Available: 4,900 - 174,240 SF
+Lease Rate: $0.75 - 9.00 SF/month (NNN)
+# of Spaces: 3 Spaces
+Building Size: 24,183 SF Bldg
+Space Type: Warehouse/Distribution
+--------------------
+URL: https://www.avisonyoung.ca/properties/1620-store-st-victoria-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: 1620 Store St
+Size: 347 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/16286227/54741eb4344913cdc91e4fbd5215974c5fe73d5a/full.png?1691097268
+Available: 347 SF
+Lease Rate: $2,500.00 per month (NNN)
+# of Spaces: 1 Space
+Building Size: 347 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/13035-lilley-drive-maple-ridge-lease
+Asset Type: Warehouse/Distribution
+Transaction Type: Lease
+Location: 13035 Lilley Drive
+Size: 3,350 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/13449737/3e439fa96fb8553ae23eb14a083550767906d03d/full.jpg?1663356985
+Available: 3,350 SF
+Lease Rate: $19,500.00 per month (  Please contact listing agent)
+# of Spaces: 1 Space
+Building Size: 3,350 SF Bldg
+Space Type: Warehouse/Distribution
+--------------------
+URL: https://www.avisonyoung.ca/properties/1025-wellington-road-london-lease
+Asset Type: Power Center
+Transaction Type: Lease
+Location: 1025 Wellington Road
+Size: 453 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15047627/4c1e7ef70db667eb8d6af08e323bdbd5fab2f5b0/full.jpg?1682352879
+Available: 453 SF
+Lease Rate: $2,400.00 per month (Gross)
+# of Spaces: 1 Space
+Building Size: 453 SF Bldg
+Space Type: Power Center
+--------------------
+URL: https://www.avisonyoung.ca/properties/1312-government-st-victoria-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: 1312 Government St
+Size: 1,361 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/13480703/4810fb776e17b3ed50dbd8e943f9b7f93103e5d1/full.jpg?1663778609
+Available: 1,361 SF
+Lease Rate: $62.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 2,306 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/5475-spring-garden-road-halifax-lease-1056403
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 5475 Spring Garden Road
+Size: 148 - 150 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/12291800/a481b727fe4bfd42fcb24d8bc24e8e46ed4047d3/full.jpg?1650561903
+Available: 148 - 150 SF
+Lease Rate: $550.00 - 725.00 per month (Gross)
+# of Spaces: 2 Spaces
+Building Size: 60,000 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/3148-kingston-road-toronto-lease-1088876
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: 3148 Kingston Road
+Size: 668 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/12943662/d6c8a500f77640e517eec0733a0653d2cc52dd38/full.jpg?1657726819
+Available: 668 SF
+Lease Rate: $3,200.00 per month (MG)
+# of Spaces: 1 Space
+Building Size: 8,563 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/2363-2365-danforth-avenue-toronto-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: 2363 -2365 Danforth Avenue
+Size: 590 - 1,240 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/14637576/a95defe65f596e96c8b3bde3504a11df3ee3c4d8/full.jpg?1677862728
+Available: 590 - 1,240 SF
+Lease Rate: $50.00 - 55.00 SF/yr (NN)
+# of Spaces: 2 Spaces
+Building Size: 0 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/1177-w-hastings-street-vancouver-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 1177 W Hastings Street
+Size: 1,722 - 11,914 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15121021/5796b10fc9af5e1e42c0c6087c118d4d501f8425/full.jpg?1683047051
+Available: 1,722 - 11,914 SF
+Lease Rate: $38.00 - 52.00 SF/yr (NNN)
+# of Spaces: 8 Spaces
+Building Size: 265,060 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/620-king-street-west-toronto-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 620 King Street West
+Size: 22,600 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/12613199/1ce6a76e0b50b363baf9359505777e9d335b898d/full.jpg?1654114333
+Available: 22,600 SF
+Lease Rate: $45.00 SF/yr (NN)
+# of Spaces: 1 Space
+Building Size: 253,865 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/1055-w-georgia-street-vancouver-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 1055 W Georgia Street
+Size: 2,365 - 14,339 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15152680/40d830067af24c678455a7f01d0ddff111277dd8/full.jpg?1683302927
+Available: 2,365 - 14,339 SF
+Lease Rate: $43.00 SF/yr (NNN)
+# of Spaces: 6 Spaces
+Building Size: 435,000 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/12203-old-yale-road-10920-fir-road-10948-speen-road-surrey-lease
+Asset Type: Warehouse/Distribution
+Transaction Type: Lease
+Location: 12203 Old Yale Road, 10920 Fir Road & 10948 Speen Road
+Size: 1.43 - 1.8 Acres
+Photo: https://s3.amazonaws.com/buildout-production/datas/4604045/41db9314288612d0e776a3dfb0ff6ef85fc39bdc/full.png?1591293170
+Available: 1.43 - 1.8 Acres
+Lease Rate: $3.50 SF/month (NNN)
+# of Spaces: 3 Spaces
+Building Size: 217,800 SF Bldg
+Space Type: Warehouse/Distribution
+--------------------
+URL: https://www.avisonyoung.ca/properties/3949-shelbourne-st-victoria-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: 3949 Shelbourne St
+Size: 1,256 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15295231/c7a6bd2b0da7e712dd1bf9034b4d0d583444354f/full.jpg?1684962919
+Available: 1,256 SF
+Lease Rate: $42.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 2,689 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/138-victory-ship-way-north-vancouver-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: 138 Victory Ship Way
+Size: 380 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/13169997/0ba759346a86b316cbcbfdf91c00fe541791938a/full.png?1660161496
+Available: 380 SF
+Lease Rate: $40.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 20,000 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/7355-woodbine-avenue-markham-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: 7355 Woodbine Avenue
+Size: 2,627 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/14900101/14d89f62a528d836f459997c4f40b1a40d788f2d/full.jpg?1680631788
+Available: 2,627 SF
+Lease Rate: $40.00 SF/yr (NN)
+# of Spaces: 1 Space
+Building Size: 2,627 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/888-attree-ave-victoria-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 888 Attree Ave
+Size: 1,500 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/13415743/28510df80fc13c9387bc5ce58c2c68753ec36515/full.jpg?1663090048
+Available: 1,500 SF
+Lease Rate: $4,900.00 per month (Gross)
+# of Spaces: 1 Space
+Building Size: 1,500 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/101b-6981-east-saanich-road-victoria-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 101B-6981 East Saanich Road
+Size: 436 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15660218/61af0d3a956d9d62dc10fa9717b0d55dab3b23c0/full.jpg?1689355906
+Available: 436 SF
+Lease Rate: $1,350.00 per month (Gross)
+# of Spaces: 1 Space
+Building Size: 436 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/525-hespeler-road-cambridge-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: 525 Hespeler Road
+Size: 1,208 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/13870014/2f33a2def80634a99c1c99ee12c23844d5538063/full.jpg?1668112189
+Available: 1,208 SF
+Lease Rate: $36.00 SF/yr (SF Net)
+# of Spaces: 1 Space
+Building Size: 1,209 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/4055-walker-road-windsor-lease
+Asset Type: Truck Terminal/Hub/Transit
+Transaction Type: Lease
+Location: 4055 Walker Road
+Size: 6,000 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15766423/7e30d9b69f94b4f7623432b917c27b3f11119ba9/full.jpg?1690553795
+Available: 6,000 SF
+Lease Rate: $18,000.00 per month (NNN)
+# of Spaces: 1 Space
+Building Size: 6,000 SF Bldg
+Space Type: Truck Terminal/Hub/Transit
+--------------------
+URL: https://www.avisonyoung.ca/properties/527-pandora-ave-victoria-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: 527 Pandora Ave
+Size: 1,130 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15290505/0e01088dc721c5fe351ea2cde97c0a7902d58630/full.jpg?1684943055
+Available: 1,130 SF
+Lease Rate: $36.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 90,765 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/prairie-mall-1470-prairie-avenue-port-coquitlam-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: Prairie Mall – 1470 Prairie Avenue
+Size: 864 - 4,102 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/14970117/fa348f11cb5a6f083ee48772ed7f0a45250a3f8d/full.jpg?1681394198
+Available: 864 - 4,102 SF
+Lease Rate: $33.00 - 35.00 SF/yr (NNN)
+# of Spaces: 2 Spaces
+Building Size: 278,255 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/155-king-st-n-waterloo-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: 155 King St N
+Size: 1,046 - 2,207 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/14079347/fb4470d1559db07657a5c78f848f67016c6bcaa4/full.jpg?1670946617
+Available: 1,046 - 2,207 SF
+Lease Rate: $28.00 - 35.00 SF/yr (Sq Ft Net)
+# of Spaces: 3 Spaces
+Building Size: 2,207 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/525-highland-road-w-kitchener-lease
+Asset Type: Retail-Pad
+Transaction Type: Lease
+Location: 525 Highland Road W
+Size: 5,000 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15565674/1f68f5c97986823952224da6afdc1be9be5e79b4/full.jpg?1688048602
+Available: 5,000 SF
+Lease Rate: $35.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 5,000 SF Bldg
+Space Type: Retail-Pad
+--------------------
+URL: https://www.avisonyoung.ca/properties/952-johnson-street-victoria-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: 952 Johnson Street 
+Size: 750 - 2,500 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/11032670/6bed0d40493584fe6cc7e38d82e2ef1c942af742/full.jpg?1636482948
+Available: 750 - 2,500 SF
+Lease Rate: $30.00 - 35.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 180,000 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/1537-brunswick-street-halifax-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: 1537 Brunswick Street
+Size: 648 - 5,120 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/14435532/8560189586644535de2c6f469980c5c5859adaef/full.jpg?1675817690
+Available: 648 - 5,120 SF
+Lease Rate: $28.00 - 34.00 SF/yr (NNN)
+# of Spaces: 5 Spaces
+Building Size: 78,120 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/17-benton-street-kitchener-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 17 Benton Street
+Size: 3,000 - 6,000 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/13584605/d5b6f268f6e7526b6b29eeb6ab01dd10bba86ccf/full.jpg?1664901455
+Available: 3,000 - 6,000 SF
+Lease Rate: $34.00 SF/yr (NN)
+# of Spaces: 1 Space
+Building Size: 3,000 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/1241-woodbine-avenue-m4c-4e5-lease
+Asset Type: Flex Space
+Transaction Type: Lease
+Location: 1241 Woodbine Avenue 
+Size: 2,166 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/13071309/a24e63d79bb0eb1bbd6c5eaae4ff1168f6865b3f/full.jpg?1659041456
+Available: 2,166 SF
+Lease Rate: $34.00 SF/yr (Gross)
+# of Spaces: 1 Space
+Building Size: 4,288 SF Bldg
+Space Type: Flex Space
+--------------------
+URL: https://www.avisonyoung.ca/properties/541-fisgard-st-victoria-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: 541 Fisgard St
+Size: 2,938 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15589195/18de9f2a33481f08129424d14aa4d96349523495/full.jpg?1688496572
+Available: 2,938 SF
+Lease Rate: $34.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 7,500 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/2424-beacon-avenue-sidney-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: 2424 Beacon Avenue
+Size: 2,053 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15641885/cdad635ddf3036c268ed7e8e35861542432f22b9/full.jpg?1689179954
+Available: 2,053 SF
+Lease Rate: $34.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 2,053 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/1900-richmond-rd-victoria-lease
+Asset Type: Medical
+Transaction Type: Lease
+Location: 1900 Richmond Rd
+Size: 714 - 1,764 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15010366/d52794e218ae1c3859ccc999bec5b62dfcbe4f5b/full.png?1681858162
+Available: 714 - 1,764 SF
+Lease Rate: $34.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 1,764 SF Bldg
+Space Type: Medical
+--------------------
+URL: https://www.avisonyoung.ca/properties/941-fort-street-victoria-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: 941 Fort Street 
+Size: 824 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/12841825/ede5a91233808bfcfb259a697375a9a2f2eaae26/full.jpg?1656474345
+Available: 824 SF
+Lease Rate: $32.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 941 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/1824-government-street-victoria-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: 1824 Government Street
+Size: 1,019 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15318354/a479731d8b975010a182d1896c1b23c4531c8c59/full.jpg?1685401081
+Available: 1,019 SF
+Lease Rate: $32.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 10,000 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/1208-wharf-st-victoria-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: 1208 Wharf St
+Size: 600 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15673615/87f2cb71355f6937ad6755d07c9550356deef31b/full.jpg?1689629118
+Available: 600 SF
+Lease Rate: $1,600.00 per month (NNN)
+# of Spaces: 1 Space
+Building Size: 600 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/711-treanor-ave-langford-lease
+Asset Type: Ground-Level Commercial
+Transaction Type: Lease
+Location: 711 Treanor Ave
+Size: 1,500 - 4,328 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15418682/c819eedf5be011b60c0c0adb55633ba6efb3ab4f/full.jpg?1686331899
+Available: 1,500 - 4,328 SF
+Lease Rate: $30.50 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 4,328 SF Bldg
+Space Type: Ground-Level Commercial
+--------------------
+URL: https://www.avisonyoung.ca/properties/1074-103a-st-sw-edmonton-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 1074 - 103A St SW
+Size: 1,843 - 60,000 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/2365840/ba556aa75e2455d5ce6103087c3a263d1d5fbebd/full.jpg?1537394990
+Available: 1,843 - 60,000 SF
+Lease Rate: $27.00 - 30.00 SF/yr (NNN)
+# of Spaces: 2 Spaces
+Building Size: 60,000 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/unit-113-829-10-street-canmore-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: Unit 113, 829 - 10 Street
+Size: 2,042 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/14594455/6153a72cd1b9d0531c8e940a7b9aa4613e54af4a/full.jpg?1677599142
+Available: 2,042 SF
+Lease Rate: $30.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 2,042 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/the-boss-56-supreme-court-halifax-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: The Boss 56 Supreme Court
+Size: 1,080 - 4,640 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/3157930/cfc22708c2b860d5a4e44b2027d7660aeb6796a8/full.jpg?1554221523
+Available: 1,080 - 4,640 SF
+Lease Rate: $25.00 - 30.00 SF/yr (NNN)
+# of Spaces: 8 Spaces
+Building Size: 75,229 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/172-wentworth-drive-halifax-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 172 Wentworth Drive
+Size: 1,000 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/9267359/3cb7e8756ac53f6caf458d53d0db35891e369416/full.jpg?1623073022
+Available: 1,000 SF
+Lease Rate: $30.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 1,000 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/4521-parliament-avenue-regina-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 4521 Parliament Avenue
+Size: 27,531 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/2120012/6171689bdb01ebdaa30cbd8d80664ca4150aa7c9/full.jpg?1529523021
+Available: 27,531 SF
+Lease Rate: $30.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 27,531 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/1925-main-street-vancouver-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 1925 Main Street
+Size: 4,869 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/13961802/1356dfef4bb6c9f3d008b41a69c7876594fd1ca9/full.jpg?1669253316
+Available: 4,869 SF
+Lease Rate: $30.00 SF/yr (Contact listing agent)
+# of Spaces: 1 Space
+Building Size: 4,869 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/4195-king-street-e-kitchener-lease
+Asset Type: Specialty Center
+Transaction Type: Lease
+Location: 4195 King Street E
+Size: 830 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15600132/31fea084953d3069e69064244063df47103334b2/full.jpg?1688655745
+Available: 830 SF
+Lease Rate: $30.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 830 SF Bldg
+Space Type: Specialty Center
+--------------------
+URL: https://www.avisonyoung.ca/properties/567-st-annes-road-winnipeg-lease
+Asset Type: Free Standing Building
+Transaction Type: Lease
+Location: 567 St. Anne's Road
+Size: 763 - 9,560 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/13354404/0013d83955f48cdad9ac498ad5cd1463d5804b3b/full.jpg?1662481038
+Available: 763 - 9,560 SF
+Lease Rate: $28.00 - 30.00 SF/yr (NN)
+# of Spaces: 1 Space
+Building Size: 9,560 SF Bldg
+Space Type: Free Standing Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/1184-castlefield-avenue-toronto-lease
+Asset Type: Creative/Loft
+Transaction Type: Lease
+Location: 1184 Castlefield Avenue
+Size: 3,500 - 7,500 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/8649908/511bc4ceb513fb9d35e329472685b406056d76db/full.jpg?1621511389
+Available: 3,500 - 7,500 SF
+Lease Rate: $26.00 - 30.00 SF/yr (NNN)
+# of Spaces: 3 Spaces
+Building Size: 15,000 SF Bldg
+Space Type: Creative/Loft
+--------------------
+URL: https://www.avisonyoung.ca/properties/481-taunton-road-west-oshawa-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 481 Taunton Road West
+Size: 2,500 - 17,275 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/14811967/c465c2f3156047bfe2bdd2b51d7636e8db7af2a5/full.jpg?1679679790
+Available: 2,500 - 17,275 SF
+Lease Rate: $25.75 - 30.00 SF/yr (NNN)
+# of Spaces: 6 Spaces
+Building Size: 29,314 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/748-johnson-street-victoria-lease
+Asset Type: Restaurant
+Transaction Type: Lease
+Location: 748 Johnson Street 
+Size: 1,167 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/14250916/6a2b1526939ce6de0eeb84ca132208e458e27f36/full.jpg?1673837648
+Available: 1,167 SF
+Lease Rate: $30.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 1,167 SF Bldg
+Space Type: Restaurant
+--------------------
+URL: https://www.avisonyoung.ca/properties/9843-second-st-sidney-lease
+Asset Type: Strip Center
+Transaction Type: Lease
+Location: 9843 Second St
+Size: 781 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/14373222/0b64c366539657c1daa7d64126984c5855fae8ba/full.jpg?1675181046
+Available: 781 SF
+Lease Rate: $30.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 781 SF Bldg
+Space Type: Strip Center
+--------------------
+URL: https://www.avisonyoung.ca/properties/1232-bedford-highway-halifax-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 1232 Bedford Highway
+Size: 2,000 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/12619334/98672a0baa89b0261a610ac05e9f16691b8eab05/full.jpg?1654179595
+Available: 2,000 SF
+Lease Rate: $4,995.00 per month (Gross)
+# of Spaces: 1 Space
+Building Size: 2,000 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/823-corydon-ave-winnipeg-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 823 Corydon Ave
+Size: 1,898 - 2,207 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/12740645/84ad883f2d22bdfcd2b15cbcd596d875410bcbb4/full.png?1655413870
+Available: 1,898 - 2,207 SF
+Lease Rate: $18.00 - 29.95 SF/yr (NN)
+# of Spaces: 2 Spaces
+Building Size: 1,800 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/894-caledonia-road-north-york-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: 894 Caledonia Road
+Size: 1,316 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/11638438/0940af46259866ce86339d1bd45d20576da150bd/full.jpg?1643988666
+Available: 1,316 SF
+Lease Rate: $29.75 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 9,500 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/1035-64-avenue-se-calgary-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 1035 - 64 Avenue SE
+Size: 808 - 40,359 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/12187683/7ad8db138937ef61b123ba0a7226d3dbee3602e1/full.png?1649460299
+Available: 808 - 40,359 SF
+Lease Rate: $20.00 - 29.00 SF/yr (NNN)
+# of Spaces: 11 Spaces
+Building Size: 57,349 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/125-126-tycos-drive-north-york-lease
+Asset Type: Office Warehouse
+Transaction Type: Lease
+Location: 125 & 126 Tycos Drive
+Size: 5,845 - 14,329 SF
+Photo: //assets.buildout.com/assets/plugins/photo_placeholder-623024d78d77741a2e8b3318edee992ccd44bf2abfffe503a77470578eff2a60.png
+Available: 5,845 - 14,329 SF
+Lease Rate: $22.95 - 28.95 SF/yr (NNN)
+# of Spaces: 4 Spaces
+Building Size: 14,392 SF Bldg
+Space Type: Office Warehouse
+--------------------
+URL: https://www.avisonyoung.ca/properties/850-harbourside-drive-north-vancouver-bc-north-vancouver-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 850 Harbourside Drive, North Vancouver, BC
+Size: 874 - 2,083 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/14057614/68b34fd8085c7f2e75e2870b8ab63671eff95f61/full.jpg?1670546888
+Available: 874 - 2,083 SF
+Lease Rate: $28.00 SF/yr (NNN)
+# of Spaces: 3 Spaces
+Building Size: 33,750 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/700-strasburg-road-kitchener-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: 700 Strasburg Road 
+Size: 1,058 - 2,350 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/12782864/42fb817a288904b4c92a15564e25021656c1715c/full.jpg?1655909107
+Available: 1,058 - 2,350 SF
+Lease Rate: $21.00 - 28.00 SF/yr (NN; Square Foot Net)
+# of Spaces: 2 Spaces
+Building Size: 2,065 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/809-victoria-street-n-kitchener-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: 809 Victoria Street N
+Size: 921 - 2,912 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/14507384/ddd40cdda4ba0645a6d1cdc171b5ccffe9f3416a/full.jpg?1676567738
+Available: 921 - 2,912 SF
+Lease Rate: $20.00 - 28.00 SF/yr (Sq Ft Net; NNN)
+# of Spaces: 2 Spaces
+Building Size: 2,912 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/46-james-street-n-hamilton-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: 46 James Street N
+Size: 2,923 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15508107/0351fe1f3525c69c3c3e9f22db4eb2dead092146/full.jpg?1687368341
+Available: 2,923 SF
+Lease Rate: $28.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 2,959 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/1601-douglas-street-victoria-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: 1601 Douglas Street
+Size: 2,665 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15742726/ab0257562af2a530556c53abe0d2e42f182df3c5/full.jpg?1690390234
+Available: 2,665 SF
+Lease Rate: $28.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 2,665 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/8333-weston-road-vaughan-lease
+Asset Type: Medical
+Transaction Type: Lease
+Location: 8333 Weston Road
+Size: 550 - 2,955 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15302653/f8cea404d89c4b83169338d615d0ab55c5e47687/full.jpg?1685037092
+Available: 550 - 2,955 SF
+Lease Rate: $16.50 - 27.60 SF/yr (NNN; Gross)
+# of Spaces: 12 Spaces
+Building Size: 57,976 SF Bldg
+Space Type: Medical
+--------------------
+URL: https://www.avisonyoung.ca/properties/43-arthur-street-s-guelph-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 43 Arthur Street S
+Size: 2,468 - 8,073 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/14516549/5e2eefe12b126f746d229f205268f4d767720988/full.jpg?1676647509
+Available: 2,468 - 8,073 SF
+Lease Rate: $12.00 - 27.00 SF/yr (Sq Ft Net)
+# of Spaces: 4 Spaces
+Building Size: 8,073 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/230-4396-west-saanich-road-victoria-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 230-4396 West Saanich Road
+Size: 1,000 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/10410582/1126fd1b093d6947fbb5a218037480494e91f9d0/full.jpg?1631052232
+Available: 1,000 SF
+Lease Rate: $27.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 50,000 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/260-4396-west-saanich-road-victoria-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 260 - 4396 West Saanich Road
+Size: 4,007 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15589651/b377ec37b6b8d4eb2aaebe148af38d9aa377aa59/full.jpg?1688525806
+Available: 4,007 SF
+Lease Rate: $27.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 50,000 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/1435-saint-alexandre-street-montral-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 1435 Saint-Alexandre Street
+Size: 15,000 - 19,460 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/7992416/621b076a4de16930086e669fc67d12ed92b44240/full.jpg?1618319049
+Available: 15,000 - 19,460 SF
+Lease Rate: $26.00 SF/yr (Gross)
+# of Spaces: 1 Space
+Building Size: 198,232 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/1435-rue-saint-alexandre-montral-lease
+Asset Type: Bureaux
+Transaction Type: Lease
+Location: 1435, rue Saint-Alexandre
+Size: 15,000 - 19,460 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/7992450/85894624436ac8214ab2fa12733b263d26e61e7a/full.jpg?1618319236
+Available: 15,000 - 19,460 SF
+Lease Rate: $26.00 SF/yr (Gross)
+# of Spaces: 1 Space
+Building Size: 198,232 SF Bldg
+Space Type: Bureaux
+--------------------
+URL: https://www.avisonyoung.ca/properties/7610-village-centre-place-greely-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 7610 Village Centre Place
+Size: 1,100 - 1,200 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/14858186/9500d29217ada33c186ac4408e476759d0958aa7/full.jpg?1680185328
+Available: 1,100 - 1,200 SF
+Lease Rate: $26.00 SF/yr (NNN)
+# of Spaces: 2 Spaces
+Building Size: 6,000 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/1075-west-1st-street-north-vancouver-lease
+Asset Type: Flex Space
+Transaction Type: Lease
+Location: 1075 West 1st Street
+Size: 1,355 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15576858/9e25fd6cf001bf8190ca82ff9178061529a0a6c1/full.jpg?1688147463
+Available: 1,355 SF
+Lease Rate: $26.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 1,345 SF Bldg
+Space Type: Flex Space
+--------------------
+URL: https://www.avisonyoung.ca/properties/1132-west-15th-street-north-vancouver-lease
+Asset Type: Flex Space
+Transaction Type: Lease
+Location: 1132 West 15th Street
+Size: 4,688 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15589250/acf03dfc34d25f1d47c2177bd3151a82f684c0a2/full.jpg?1688498539
+Available: 4,688 SF
+Lease Rate: $26.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 4,688 SF Bldg
+Space Type: Flex Space
+--------------------
+URL: https://www.avisonyoung.ca/properties/90-wingold-avenue-toronto-lease-485151
+Asset Type: Office Showroom
+Transaction Type: Lease
+Location: 90 Wingold Avenue
+Size: 2,100 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/3258006/5879b3090a970b355ad2b7f872c874932cffc65a/full.jpg?1556913071
+Available: 2,100 SF
+Lease Rate: $26.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 20,700 SF Bldg
+Space Type: Office Showroom
+--------------------
+URL: https://www.avisonyoung.ca/properties/617-broughton-st-victoria-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: 617 Broughton St
+Size: 463 - 1,465 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/10875631/aaae9684fa976678eb49a2ec444d5456dde1e10b/full.jpg?1634745532
+Available: 463 - 1,465 SF
+Lease Rate: $22.00 - 26.00 SF/yr (NNN)
+# of Spaces: 3 Spaces
+Building Size: 14,741 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/3930-shelbourne-street-saanich-victoria-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 3930 Shelbourne Street, Saanich 
+Size: 965 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/12841785/2694d6c4f953fbabd047b3404f15ddaf2005c094/full.jpg?1656473725
+Available: 965 SF
+Lease Rate: $26.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 965 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/398-harbour-rd-victoria-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 398 Harbour Rd
+Size: 6,641 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/13038971/ae202ba449a86af70d062c4e62f5fa7f8cf30dcc/full.png?1658787332
+Available: 6,641 SF
+Lease Rate: $26.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 6,641 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/90-wingold-avenue-north-york-lease
+Asset Type: Office Warehouse
+Transaction Type: Lease
+Location: 90 Wingold Avenue
+Size: 2,425 - 2,988 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/14692307/66c1214a796323f0cd00a3dbac2b48bfa00ebc2d/full.jpg?1678380671
+Available: 2,425 - 2,988 SF
+Lease Rate: $25.95 SF/yr (NNN)
+# of Spaces: 2 Spaces
+Building Size: 5,413 SF Bldg
+Space Type: Office Warehouse
+--------------------
+URL: https://www.avisonyoung.ca/properties/412-laird-road-guelph-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 412 Laird Road
+Size: 1,600 - 2,800 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/13331724/bc684034af61ad65fad8d6896ec205676b8a5bf7/full.jpg?1662046482
+Available: 1,600 - 2,800 SF
+Lease Rate: $22.95 - 25.42 SF/yr (NNN)
+# of Spaces: 2 Spaces
+Building Size: 2,800 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/70-arthur-street-winnipeg-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 70 Arthur Street
+Size: 500 - 6,999 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/2087542/6af3824cfe43e5dc460026e240bcd3d1571cc82d/full.jpg?1528387894
+Available: 500 - 6,999 SF
+Lease Rate: $666.67 - 9,335.00 per month (Gross)
+# of Spaces: 22 Spaces
+Building Size: 44,028 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/10950-23-avenue-nw-edmonton-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 10950 23 Avenue NW
+Size: 2,000 - 12,812 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15537382/67bbb5eac25966a9dbdcafceab031fee32e97d46/full.png?1687797332
+Available: 2,000 - 12,812 SF
+Lease Rate: $23.00 - 25.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 48,000 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/1716-16-avenue-nw-calgary-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 1716 - 16 Avenue NW
+Size: 3,531 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/10682204/a9d93e03a79a4065180bef77982d0ab1fb17add9/full.jpg?1632771268
+Available: 3,531 SF
+Lease Rate: $25.00 SF/yr (Gross)
+# of Spaces: 1 Space
+Building Size: 27,238 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/204-197-forester-street-north-vancouver-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: #204 - 197 Forester Street
+Size: 1,483 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/3413408/b294ad0377476b0330c779b82a11a9fb3c74147c/full.jpg?1561073919
+Available: 1,483 SF
+Lease Rate: $25.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 1,483 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/unit-202-8360-ontario-street-vancouver-lease
+Asset Type: Flex Space
+Transaction Type: Lease
+Location: Unit 202 - 8360 Ontario Street
+Size: 3,569 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/13747158/b37dcb44a2c815e19dd86ec8f04c2061d7248681/full.jpg?1666737384
+Available: 3,569 SF
+Lease Rate: $25.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 3,569 SF Bldg
+Space Type: Flex Space
+--------------------
+URL: https://www.avisonyoung.ca/properties/unit-134-8360-ontario-street-vancouver-lease
+Asset Type: Flex Space
+Transaction Type: Lease
+Location: Unit 134 - 8360 Ontario Street
+Size: 2,630 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/13775222/9cf23fb5ef48f40b2d8baa210a5530a6d47af6e5/full.jpg?1666982286
+Available: 2,630 SF
+Lease Rate: $25.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 2,630 SF Bldg
+Space Type: Flex Space
+--------------------
+URL: https://www.avisonyoung.ca/properties/104-8360-ontario-street-vancouver-lease
+Asset Type: Warehouse/Distribution
+Transaction Type: Lease
+Location: #104 - 8360 Ontario Street
+Size: 2,630 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/14400243/65cdcc1212148a5b8358c6bf723f3e9b9b56d49c/full.jpg?1675367183
+Available: 2,630 SF
+Lease Rate: $25.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 2,630 SF Bldg
+Space Type: Warehouse/Distribution
+--------------------
+URL: https://www.avisonyoung.ca/properties/7-5641-200-street-langley-lease
+Asset Type: Warehouse/Distribution
+Transaction Type: Lease
+Location: #7 - 5641 200 Street
+Size: 3,475 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15404115/21baff42912f6e48e57fdc3a56cbfbf1bf8915c7/full.jpg?1686243115
+Available: 3,475 SF
+Lease Rate: $25.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 3,475 SF Bldg
+Space Type: Warehouse/Distribution
+--------------------
+URL: https://www.avisonyoung.ca/properties/1886-gordon-street-guelph-lease
+Asset Type: Street Retail
+Transaction Type: Lease
+Location: 1886 Gordon Street
+Size: 2,055 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15199323/9258f2ff219c935ac3a0bd45300151cacbf1e27b/full.jpg?1683824066
+Available: 2,055 SF
+Lease Rate: $25.00 SF/yr (NNN)
+# of Spaces: 1 Space
+Building Size: 2,055 SF Bldg
+Space Type: Street Retail
+--------------------
+URL: https://www.avisonyoung.ca/properties/2583-2589-portage-avenue-winnipeg-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 2583-2589 Portage Avenue
+Size: 2,125 - 5,436 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/10836969/f20eff001290b0000462a721d380bf2e625e8fac/full.png?1634242084
+Available: 2,125 - 5,436 SF
+Lease Rate: $16.00 - 25.00 SF/yr (Gross; NN)
+# of Spaces: 2 Spaces
+Building Size: 10,000 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/3365-portage-avenue-winnipeg-lease
+Asset Type: Office Building
+Transaction Type: Lease
+Location: 3365 Portage Avenue
+Size: 2,531 - 5,081 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/15433255/92a837db5dcebf4015c6eec1122ac1c3066cb6a9/full.jpg?1686594991
+Available: 2,531 - 5,081 SF
+Lease Rate: $25.00 SF/yr (NN)
+# of Spaces: 3 Spaces
+Building Size: 5,081 SF Bldg
+Space Type: Office Building
+--------------------
+URL: https://www.avisonyoung.ca/properties/393-portage-avenue-winnipeg-office-space-for-lease-lease
+Asset Type: Institutional/Governmental
+Transaction Type: Lease
+Location: 393 Portage Avenue
+Size: 889 - 8,917 SF
+Photo: https://s3.amazonaws.com/buildout-production/datas/12053979/0eb2c465ef9c4e415b1d34d71d0ec32272811283/full.jpg?1648070436
+Available: 889 - 8,917 SF
+Lease Rate: $25.00 SF/yr (Gross)
+# of Spaces: 4 Spaces
+Building Size: 440,000 SF Bldg
+Space Type: Institutional/Governmental
+--------------------
