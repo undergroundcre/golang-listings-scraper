@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"net/url"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -118,6 +119,18 @@ func arison() {
 				location := entryMap["address"].(string)
 				size := entryMap["size_summary"].(string)
 				photo := entryMap["photo_url"].(string)
+				Latitude, latOk := entryMap["latitude"].(float64)
+				Longitude, longOk := entryMap["longitude"].(float64)
+				
+				var LatitudeStr, LongitudeStr string
+				if latOk && longOk {
+					LatitudeStr = strconv.FormatFloat(Latitude, 'f', 6, 64)
+					LongitudeStr = strconv.FormatFloat(Longitude, 'f', 6, 64)
+				} else {
+					LatitudeStr = "N/A"
+					LongitudeStr = "N/A"
+				}
+	
 		
 				var transactiontype string
 				if saleorlease == true {
@@ -138,7 +151,7 @@ func arison() {
 					}
 				}
 		
-				file.WriteString(fmt.Sprintf("URL: %s\nAsset Type: %s\nTransaction Type: %s\nLocation: %s\nSize: %s\nPhoto: %s\n%s--------------------\n", url, assetType, transactiontype, location, size, photo, attributes))
+				file.WriteString(fmt.Sprintf("URL: %s\nAsset Type: %s\nTransaction Type: %s\nLocation: %s\nSize: %s\nLatitude: %s\nLongitude: %s\nPhoto: %s\n%s--------------------\n", url, assetType, transactiontype, location, size, LatitudeStr, LongitudeStr, photo, attributes))
 			}
 		}
 		

@@ -58,7 +58,7 @@ func ScrapeListingsFromMainURLs() {
 	defer failedFile.Close()
 
 	// Add a ticker to track the time and determine when to pause the fetching
-	ticker := time.NewTicker(1 * time.Minute)
+	ticker := time.NewTicker(10 * time.Minute)
 	defer ticker.Stop()
 
 	for {
@@ -73,7 +73,7 @@ func ScrapeListingsFromMainURLs() {
 				fmt.Fprintf(file, "Location: %s\n", listing.Name)
 				fmt.Fprintf(file, "Photo: %s\n", listing.ImageSrc)
 				for key, boldFont := range listing.KeyBoldMap {
-					fmt.Fprintf(file, "%s | %s\n", key, boldFont)
+					fmt.Fprintf(file, "%s: %s\n", key, boldFont)
 				}
 				fmt.Fprintln(file, strings.Repeat("-", 20))
 			}
@@ -86,7 +86,7 @@ func ScrapeListingsFromMainURLs() {
 			}
 
 		case <-ticker.C: // After every 10 minutes, pause and wait for a random duration
-			pauseDuration := 3 + rand.Intn(4) // Generates a random value between 3 to 6
+			pauseDuration := 1 + rand.Intn(4) // Generates a random value between 1 to 5
 			pauseTime := time.Now()
 			fmt.Printf("[%s] Pausing fetching for %d minutes...\n", pauseTime.Format(time.RFC3339), pauseDuration)
 			time.Sleep(time.Duration(pauseDuration) * time.Minute)

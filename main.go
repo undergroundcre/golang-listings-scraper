@@ -7,19 +7,50 @@ import (
 
 func main() {
 	// Track the time for the arison() function
-	fmt.Println("arison() started")
+	fmt.Println("arison started")
 	startTimeArison := time.Now()
 	arison()
 	endTimeArison := time.Now()
 	totalTimeArison := endTimeArison.Sub(startTimeArison)
-	fmt.Printf("arison() execution time: %s\n", totalTimeArison)
+	fmt.Printf("arison execution time: %s\n", totalTimeArison)
+
+	// Track the time for the loopnet() function
+	fmt.Println("loopnet() started")
+	startTimeLoopnet := time.Now()
+	loopnet()
+	endTimeLoopnet := time.Now()
+	totalTimeLoopnet := endTimeLoopnet.Sub(startTimeLoopnet)
+	fmt.Printf("loopnet() execution time: %s\n", totalTimeLoopnet)
+
+	// Track the time for the omada() function
+	fmt.Println("omada() started")
+	startTimeOmada := time.Now()
+	omada()
+	endTimeOmada := time.Now()
+	totalTimeOmada := endTimeOmada.Sub(startTimeOmada)
+	fmt.Printf("omada() execution time: %s\n", totalTimeOmada)
+
+	// Track the time for the royalpark() function
+	fmt.Println("royalpark() started")
+	startTimeRoyalpark := time.Now()
+	royalpark()
+	endTimeRoyalpark := time.Now()
+	totalTimeRoyalpark := endTimeRoyalpark.Sub(startTimeRoyalpark)
+	fmt.Printf("royalpark execution time: %s\n", totalTimeRoyalpark)
+
+	// Track the time for the cushman() function
+	fmt.Println("cushman started")
+	startTimeCushman := time.Now()
+	cushman()
+	endTimeCushman := time.Now()
+	totalTimeCushman := endTimeCushman.Sub(startTimeCushman)
+	fmt.Printf("cushman execution time: %s\n", totalTimeCushman)
 
 	// Track the time for the ScrapeListingsFromMainURLs() function
-	fmt.Println("ScrapeListingsFromMainURLs() started")
+	fmt.Println("spacelist started")
 	startTimeScrape := time.Now()
 	ScrapeListingsFromMainURLs()
 	endTimeScrape := time.Now()
 	totalTimeScrape := endTimeScrape.Sub(startTimeScrape)
-	fmt.Printf("ScrapeListingsFromMainURLs() execution time: %s\n", totalTimeScrape)
+	fmt.Printf("spacelist execution time: %s\n", totalTimeScrape)
 }
-
