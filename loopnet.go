@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
+	"strings"
 	"time"
 
 	"github.com/PuerkitoBio/goquery"
@@ -17,6 +19,12 @@ func loopnet() {
 	client := &http.Client{
 		Timeout: time.Second * 10,
 	}
+
+	file, err := os.OpenFile("data.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
 
 	for hasListings {
 		url := fmt.Sprintf("%s%d/", baseURL, page)
@@ -37,41 +45,45 @@ func loopnet() {
 			log.Fatal(err)
 		}
 
-		headerElements := doc.Find(".header-col.header-left")
-		sizeLocElements := doc.Find(".header-col.header-right.text-right")
-		slideElements := doc.Find(".slide.active")
-
-		if headerElements.Length() == 0 || sizeLocElements.Length() == 0 || slideElements.Length() == 0 {
+		placardElements := doc.Find(".placard")
+		if placardElements.Length() == 0 {
 			hasListings = false
 			break
 		}
 
-		headerElements.Each(func(index int, div *goquery.Selection) {
-			leftH4Text := div.Find("a.left-h4").Text()
-			leftH6Text := div.Find("a.left-h6").Text()
-
-			headerLink := div.Find("a.left-h4")
+		for _, placard := range placardElements.Nodes {
+			headerLink := goquery.NewDocumentFromNode(placard).Find(".placard-content a")
 			headerURL, _ := headerLink.Attr("href")
 
-			locationElement := sizeLocElements.Eq(index).Find("a.right-h6")
-			location := locationElement.Text()
+			nameFull := goquery.NewDocumentFromNode(placard).Find(".header-col h4")
+			name := nameFull.Text()
 
-			rightH4Element := sizeLocElements.Eq(index).Find("a.right-h4")
-			rightH4Text := rightH4Element.Text()
+			nameFulltwo := goquery.NewDocumentFromNode(placard).Find(".header-col h6")
+			nametwo := nameFulltwo.Text()
 
-			slide := slideElements.Eq(index)
+			locationFull := goquery.NewDocumentFromNode(placard).Find(".header-col a")
+			location := locationFull.Text()
+
+			priceElement := goquery.NewDocumentFromNode(placard).Find(".placard-info .data-points-2c li[name='Price']")
+			price := strings.TrimSpace(priceElement.Text())
+
+			assetTypeElement := goquery.NewDocumentFromNode(placard).Find(".placard-info .data-points-2c li:nth-child(2)")
+			assetType := strings.TrimSpace(assetTypeElement.Text())
+
+			slide := goquery.NewDocumentFromNode(placard).Find(".slide.active")
 			imgSrc, _ := slide.Find("img").Attr("src")
 
-			fmt.Println("URL:", headerURL)
-			fmt.Println("Name:", leftH4Text, leftH6Text)
-			fmt.Println("Type:", rightH4Text)
-			fmt.Println("Location:", location)
-			fmt.Println("Image:", imgSrc)
-			fmt.Println("-------------------------------")
-		})
+			result := fmt.Sprintf("URL: %s\nName: %s\nPrice: %s\nLocation: %s\nAsset type: %s\nTransaction Type: Lease\nImage: %s\n-------------------------------\n",
+				headerURL, name + " " + nametwo, price, location ,assetType, imgSrc)
+
+			result = strings.TrimSpace(result) + "\n" // Trim spaces and add a newline
+			_, err := file.WriteString(result)
+			if err != nil {
+				log.Fatal(err)
+			}
+		}
 
 		page++
 	}
 
-	fmt.Println("No more listings found.")
 }

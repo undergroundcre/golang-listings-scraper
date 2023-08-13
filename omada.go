@@ -125,6 +125,5 @@ func omada() {
 		file.WriteString("-------------------------------\n")
 	}
 
-	fmt.Println("Data extracted and written to omada.txt")
 }
 

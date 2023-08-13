@@ -7,6 +7,7 @@ import (
 
 func main() {
 	// Track the time for the arison() function
+	// Always put arison first in the main function, if not it will mess up data.txt.
 	fmt.Println("arison started")
 	startTimeArison := time.Now()
 	arison()
@@ -15,23 +16,23 @@ func main() {
 	fmt.Printf("arison execution time: %s\n", totalTimeArison)
 
 	// Track the time for the loopnet() function
-	fmt.Println("loopnet() started")
+	fmt.Println("loopnet started")
 	startTimeLoopnet := time.Now()
 	loopnet()
 	endTimeLoopnet := time.Now()
 	totalTimeLoopnet := endTimeLoopnet.Sub(startTimeLoopnet)
-	fmt.Printf("loopnet() execution time: %s\n", totalTimeLoopnet)
+	fmt.Printf("loopnet execution time: %s\n", totalTimeLoopnet)
 
 	// Track the time for the omada() function
-	fmt.Println("omada() started")
+	fmt.Println("omada started")
 	startTimeOmada := time.Now()
 	omada()
 	endTimeOmada := time.Now()
 	totalTimeOmada := endTimeOmada.Sub(startTimeOmada)
-	fmt.Printf("omada() execution time: %s\n", totalTimeOmada)
+	fmt.Printf("omada execution time: %s\n", totalTimeOmada)
 
 	// Track the time for the royalpark() function
-	fmt.Println("royalpark() started")
+	fmt.Println("royalpark started")
 	startTimeRoyalpark := time.Now()
 	royalpark()
 	endTimeRoyalpark := time.Now()
