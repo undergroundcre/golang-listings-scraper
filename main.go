@@ -15,6 +15,13 @@ func main() {
 	totalTimeArison := endTimeArison.Sub(startTimeArison)
 	fmt.Printf("arison execution time: %s\n", totalTimeArison)
 
+	fmt.Println("cbre started")
+	startTimeCBRE := time.Now()
+	cbre()
+	endTimeCBRE := time.Now()
+	totalTimeCBRE := endTimeCBRE.Sub(startTimeCBRE)
+	fmt.Printf("cbre execution time: %s\n", totalTimeCBRE)
+
 	// Track the time for the loopnet() function
 	fmt.Println("loopnet started")
 	startTimeLoopnet := time.Now()

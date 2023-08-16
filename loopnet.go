@@ -73,7 +73,7 @@ func loopnet() {
 			slide := goquery.NewDocumentFromNode(placard).Find(".slide.active")
 			imgSrc, _ := slide.Find("img").Attr("src")
 
-			result := fmt.Sprintf("URL: %s\nName: %s\nPrice: %s\nLocation: %s\nAsset type: %s\nTransaction Type: Lease\nImage: %s\n-------------------------------\n",
+			result := fmt.Sprintf("URL: %s\nName: %s\nPrice: %s\nLocation: %s\nAsset type: %s\nTransaction Type: Lease\nPhoto: %s\n-------------------------------\n",
 				headerURL, name + " " + nametwo, price, location ,assetType, imgSrc)
 
 			result = strings.TrimSpace(result) + "\n" // Trim spaces and add a newline
