@@ -1,10 +1,11 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"net/http"
-	"os"
 	"strings"
 	"time"
 
@@ -19,12 +20,6 @@ func loopnet() {
 	client := &http.Client{
 		Timeout: time.Second * 10,
 	}
-
-	file, err := os.OpenFile("data.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer file.Close()
 
 	for hasListings {
 		url := fmt.Sprintf("%s%d/", baseURL, page)
@@ -55,35 +50,74 @@ func loopnet() {
 			headerLink := goquery.NewDocumentFromNode(placard).Find(".placard-content a")
 			headerURL, _ := headerLink.Attr("href")
 
-			nameFull := goquery.NewDocumentFromNode(placard).Find(".header-col h4")
-			name := nameFull.Text()
-
-			nameFulltwo := goquery.NewDocumentFromNode(placard).Find(".header-col h6")
-			nametwo := nameFulltwo.Text()
-
 			locationFull := goquery.NewDocumentFromNode(placard).Find(".header-col a")
 			location := locationFull.Text()
 
-			priceElement := goquery.NewDocumentFromNode(placard).Find(".placard-info .data-points-2c li[name='Price']")
-			price := strings.TrimSpace(priceElement.Text())
-
 			assetTypeElement := goquery.NewDocumentFromNode(placard).Find(".placard-info .data-points-2c li:nth-child(2)")
 			assetType := strings.TrimSpace(assetTypeElement.Text())
+			assetTypeParts := strings.SplitN(assetType, "SF", 2)
+			
+			var size, usagetype string
+			if len(assetTypeParts) > 1 {
+				size = strings.TrimSpace(assetTypeParts[0] + "SF")
+				usagetype = strings.TrimSpace(assetTypeParts[1])
+			} else {
+				size = ""
+				usagetype = strings.TrimSpace(assetType)
+			}
 
 			slide := goquery.NewDocumentFromNode(placard).Find(".slide.active")
 			imgSrc, _ := slide.Find("img").Attr("src")
 
-			result := fmt.Sprintf("URL: %s\nName: %s\nPrice: %s\nLocation: %s\nAsset type: %s\nTransaction Type: Lease\nPhoto: %s\n-------------------------------\n",
-				headerURL, name + " " + nametwo, price, location ,assetType, imgSrc)
+			constructedURL := headerURL
+			transactiontype := "Lease"
+			line1 := location
+			lat := "" // No latitude data in this source
+			lon := "" // No longitude data in this source
+			sourceuri := imgSrc
 
-			result = strings.TrimSpace(result) + "\n" // Trim spaces and add a newline
-			_, err := file.WriteString(result)
-			if err != nil {
-				log.Fatal(err)
+			// Create a Scraper struct with the extracted data
+			data := Scraper{
+				URL:         constructedURL,
+				Asset:       usagetype,
+				Transaction: transactiontype,
+				Location:    line1,
+				Size:        size,
+				Latitude:    lat,
+				Longitude:   lon,
+				Photo:       sourceuri,
 			}
+
+			// Send the data to the datastore
+			sendDataToDatastoreloopnet(data)
 		}
 
 		page++
 	}
 
+	fmt.Println("Data from LoopNet sent to datastore successfully")
 }
+
+func sendDataToDatastoreloopnet(data Scraper) {
+	jsonData, err := json.Marshal(data)
+	if err != nil {
+		fmt.Println("Error marshaling data:", err)
+		return
+	}
+
+	resp, err := http.Post("http://localhost:8080/add", "application/json", strings.NewReader(string(jsonData)))
+	if err != nil {
+		fmt.Println("Failed to send data to datastore:", err)
+		return
+	}
+	defer resp.Body.Close()
+
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println("Error reading response body:", err)
+		return
+	}
+
+	fmt.Println("Data sent to datastore:", string(body))
+}
+
