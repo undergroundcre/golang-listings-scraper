@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"os"
+	"strings"
 )
 
 func cbre() {
@@ -47,13 +47,8 @@ func cbre() {
 
 		documents := jsonResponse["Documents"].([]interface{})
 
-		// Open the file in append mode
-		dataFile, err := os.OpenFile("data.txt", os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0644)
-		if err != nil {
-			fmt.Println("Error opening file:", err)
-			return
-		}
-		defer dataFile.Close()
+		// Create an array to hold the data to be sent to the datastore
+		var dataToSend []Scraper
 
 		for _, documentList := range documents {
 			for _, document := range documentList.([]interface{}) {
@@ -98,16 +93,50 @@ func cbre() {
 
 				constructedURL := fmt.Sprintf("https://www.cbre.ca/property-details/%s", primaryKey)
 
-				// Write extracted data and constructed URL to the file
-				_, err := dataFile.WriteString(fmt.Sprintf("Name: %s\nProperty Use: %s\nTransaction Type: %s\nLongitude: %f\nLatitude: %f\nSize: %.2f %s\nSecond Address Line1: %s\nPhoto: %s\nConstructed URL: %s\n-------------------------------------\n",
-					primaryKey, usageType, transactionType, lon, lat, size, units, line1, sourceUri, constructedURL))
-				if err != nil {
-					fmt.Println(err)
-				}
+				// Add the scraped data to the array
+				dataToSend = append(dataToSend, Scraper{
+					URL:         constructedURL,
+					Asset:       usageType,
+					Transaction: transactionType,
+					Location:    line1,
+					Size:        fmt.Sprintf("%.2f %s", size, units),
+					Latitude:    fmt.Sprintf("%f", lat),
+					Longitude:   fmt.Sprintf("%f", lon),
+					Photo:       sourceUri,
+				})
 			}
 		}
-		fmt.Println("Parameters extracted and appended to data.txt")
+
+		// Send the scraped data to the datastore
+		for _, data := range dataToSend {
+			sendDataToDatastorecbre(data)
+		}
+
+		fmt.Println("Data sent to datastore successfully")
 	} else {
 		fmt.Printf("Request failed with status code: %d\n", resp.StatusCode)
 	}
+}
+
+func sendDataToDatastorecbre(data Scraper) {
+	jsonData, err := json.Marshal(data)
+	if err != nil {
+		fmt.Println("Error marshaling data:", err)
+		return
+	}
+
+	resp, err := http.Post("http://localhost:8080/add", "application/json", strings.NewReader(string(jsonData)))
+	if err != nil {
+		fmt.Println("Failed to send data to datastore:", err)
+		return
+	}
+	defer resp.Body.Close()
+
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println("Error reading response body:", err)
+		return
+	}
+
+	fmt.Println("Data sent to datastore:", string(body))
 }

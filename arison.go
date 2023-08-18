@@ -7,14 +7,24 @@ import (
 	"log"
 	"net/http"
 	"net/url"
-	"os"
 	"strconv"
 	"strings"
 )
 
+type Scraper struct {
+	URL         string
+	Asset       string
+	Transaction string
+	Location    string
+	Size        string
+	Latitude    string
+	Longitude   string
+	Photo       string
+}
+
 func fetchPageData(url string, payload map[string]string, headers map[string]string) (map[string]interface{}, error) {
 	client := &http.Client{}
-	req, err := http.NewRequest("POST", url, strings.NewReader(mapToURLValues(payload).Encode()))
+	req, err := http.NewRequest("POST", url, strings.NewReader(mapToURLValues(payload)))
 	if err != nil {
 		return nil, err
 	}
@@ -94,12 +104,6 @@ func arison() {
 		"q[s][]":                                 "max_lease_rate desc",
 	}
 
-	file, err := os.Create("data.txt")
-	if err != nil {
-		log.Fatal("Error creating file:", err)
-	}
-	defer file.Close()
-
 	pageNumber := 0
 	for {
 		payload["page"] = fmt.Sprintf("%d", pageNumber)
@@ -109,11 +113,17 @@ func arison() {
 			break
 		}
 
-		for _, entry := range data["inventory"].([]interface{}) {
+		inventory, inventoryExists := data["inventory"].([]interface{})
+		if !inventoryExists || len(inventory) == 0 {
+			log.Printf("No more listings. Exiting...")
+			break // Break out of the loop when there are no more listings
+		}
+
+		for _, entry := range inventory {
 			entryMap := entry.(map[string]interface{})
 			url := entryMap["also_for_sale_or_lease_url"].(string)
 			if url != "" {
-				url = strings.Replace(url, "sale", "lease", -1) // Replace all occurrences of "sale" with "lease"
+				url = strings.Replace(url, "sale", "lease", -1)
 				assetType := entryMap["property_sub_type_name"].(string)
 				saleorlease := entryMap["sale"]
 				location := entryMap["address"].(string)
@@ -121,7 +131,7 @@ func arison() {
 				photo := entryMap["photo_url"].(string)
 				Latitude, latOk := entryMap["latitude"].(float64)
 				Longitude, longOk := entryMap["longitude"].(float64)
-				
+
 				var LatitudeStr, LongitudeStr string
 				if latOk && longOk {
 					LatitudeStr = strconv.FormatFloat(Latitude, 'f', 6, 64)
@@ -130,46 +140,63 @@ func arison() {
 					LatitudeStr = "N/A"
 					LongitudeStr = "N/A"
 				}
-	
-		
+
 				var transactiontype string
 				if saleorlease == true {
 					transactiontype = "Sale"
 				} else {
 					transactiontype = "Lease"
 				}
-		
-				// Extract and prepare index_attributes
-				attributes := ""
-				if attrs, ok := entryMap["index_attributes"].([]interface{}); ok {
-					for _, attr := range attrs {
-						if attrSlice, isSlice := attr.([]interface{}); isSlice && len(attrSlice) == 2 {
-							key := attrSlice[0].(string)
-							value := attrSlice[1].(string)
-							attributes += fmt.Sprintf("%s: %s\n", key, value)
-						}
-					}
+
+				scraperData := Scraper{
+					URL:         url,
+					Asset:       assetType,
+					Transaction: transactiontype,
+					Location:    location,
+					Size:        size,
+					Latitude:    LatitudeStr,
+					Longitude:   LongitudeStr,
+					Photo:       photo,
 				}
-		
-				file.WriteString(fmt.Sprintf("URL: %s\nAsset Type: %s\nTransaction Type: %s\nLocation: %s\nSize: %s\nLatitude: %s\nLongitude: %s\nPhoto: %s\n%s--------------------\n", url, assetType, transactiontype, location, size, LatitudeStr, LongitudeStr, photo, attributes))
+
+				// Send data to datastore
+				sendDataToDatastore(scraperData)
 			}
 		}
-		
 
 		pageNumber++
-
-		// Check if there are more pages to fetch
-		if len(data["inventory"].([]interface{})) == 0 {
-			break
-		}
 	}
 
+	log.Printf("Script finished successfully.")
 }
 
-func mapToURLValues(m map[string]string) url.Values {
-	values := url.Values{}
+func mapToURLValues(m map[string]string) string {
+	values := []string{}
 	for k, v := range m {
-		values.Set(k, v)
+		values = append(values, k+"="+url.QueryEscape(v))
 	}
-	return values
+	return strings.Join(values, "&")
+}
+
+func sendDataToDatastore(data Scraper) {
+	jsonData, err := json.Marshal(data)
+	if err != nil {
+		log.Printf("Error marshaling data: %s", err)
+		return
+	}
+
+	resp, err := http.Post("http://localhost:8080/add", "application/json", strings.NewReader(string(jsonData)))
+	if err != nil {
+		log.Printf("Failed to send data to datastore: %s", err)
+		return
+	}
+	defer resp.Body.Close()
+
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		log.Printf("Error reading response body: %s", err)
+		return
+	}
+
+	log.Printf("Data sent to datastore: %s", string(body))
 }
