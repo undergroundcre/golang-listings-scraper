@@ -8,12 +8,12 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
-	"os"
 	"strings"
 
 	"github.com/andybalholm/brotli"
 	"golang.org/x/net/html"
 )
+
 
 func royalpark() {
 	url := "https://royalparkrealty.com/wp-admin/admin-ajax.php?a=40009.587902062645"
@@ -40,26 +40,43 @@ func royalpark() {
 		"user-agent":           "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 OPR/98.0.0.0",
 		"x-requested-with":     "XMLHttpRequest",
 	}
-	
-
 	response, err := sendPostRequest(url, payload, headers)
 	if err != nil {
 		log.Fatal("Error sending POST request:", err)
 	}
 
-	// Extract relevant information from JSON response
 	properties, err := extractProperties(response)
 	if err != nil {
 		log.Fatal("Error extracting properties:", err)
 	}
 
-	// Write information to the file
-	err = writePropertiesToFile(properties)
-	if err != nil {
-		log.Fatal("Error writing properties to file:", err)
-	}
-}
+	for _, prop := range properties {
+		address, _ := prop["address"].(string)
+		size := html.UnescapeString(prop["size"].(string))
+		latitude, _ := prop["latitude"].(float64)
+		longitude, _ := prop["longitude"].(float64)
+		permalink, _ := prop["permalink"].(string)
+		transactionType, _ := prop["transaction_type"].(string)
+		thumbnail, _ := prop["thumbnail"].(string)
+		thumbnailSrc := extractThumbnailSrc(thumbnail)
 
+		property := Scraper{
+			URL:         permalink,
+			Asset:       address,
+			Transaction: transactionType,
+			Location:    address,
+			Size:        size,
+			Latitude:    fmt.Sprintf("%f", latitude),
+			Longitude:   fmt.Sprintf("%f", longitude),
+			Photo:       thumbnailSrc,
+		}
+
+		// Send data to datastore
+		sendDataToDatastore(property)
+	}
+
+	log.Printf("Script finished successfully.")
+}
 
 func sendPostRequest(url, payload string, headers map[string]string) ([]byte, error) {
 	client := &http.Client{}
@@ -78,7 +95,6 @@ func sendPostRequest(url, payload string, headers map[string]string) ([]byte, er
 	}
 	defer resp.Body.Close()
 
-	// Check if the response is compressed with Brotli
 	var reader io.Reader
 	switch resp.Header.Get("Content-Encoding") {
 	case "br":
@@ -95,15 +111,12 @@ func sendPostRequest(url, payload string, headers map[string]string) ([]byte, er
 	return body, nil
 }
 
-
 func extractProperties(response []byte) ([]map[string]interface{}, error) {
-	// Parse the JSON response
 	var jsonResponse map[string]interface{}
 	if err := json.Unmarshal(response, &jsonResponse); err != nil {
 		return nil, err
 	}
 
-	// Extract properties from the response
 	properties, ok := jsonResponse["properties"].([]interface{})
 	if !ok {
 		return nil, fmt.Errorf("properties not found in JSON response")
@@ -121,64 +134,30 @@ func extractProperties(response []byte) ([]map[string]interface{}, error) {
 	return extractedProperties, nil
 }
 
-func writePropertiesToFile(properties []map[string]interface{}) error {
-	file, err := os.OpenFile("data.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
-	if err != nil {
-		log.Fatal("Error opening file:", err)
-	}
-	defer file.Close()
-// ...
-
-for _, prop := range properties {
-	address, _ := prop["address"].(string)
-	size := html.UnescapeString(prop["size"].(string))
-    price := html.UnescapeString(prop["price"].(string))
-	latitude, _ := prop["latitude"].(float64)
-	longitude, _ := prop["longitude"].(float64)
-	permalink, _ := prop["permalink"].(string)
-	transactionType, _ := prop["transaction_type"].(string)
-	thumbnail, _ := prop["thumbnail"].(string)
-	thumbnailSrc := extractThumbnailSrc(thumbnail)
-
-
-	// Write property information to file
-	file.WriteString("Address: " + address + "\n")
-	file.WriteString("Size: " + size + "\n")
-	file.WriteString("Price: " + price + "\n")
-	file.WriteString(fmt.Sprintf("Latitude: %f\n", latitude))
-	file.WriteString(fmt.Sprintf("Longitude: %f\n", longitude))
-	file.WriteString("Permalink: " + permalink + "\n")
-	file.WriteString("Transaction Type: " + transactionType + "\n")
-	file.WriteString("Thumbnail: " + thumbnailSrc + "\n")
-	file.WriteString("-------------------------------\n")
-}
-
-// ...
-
-
-	return nil
-}
-
 func extractThumbnailSrc(thumbnailContent string) string {
-    doc, err := html.Parse(strings.NewReader(thumbnailContent))
-    if err != nil {
-        return ""
-    }
-    var extractSrc func(*html.Node) string
-    extractSrc = func(n *html.Node) string {
-        if n.Type == html.ElementNode && n.Data == "img" {
-            for _, attr := range n.Attr {
-                if attr.Key == "src" {
-                    return attr.Val
-                }
-            }
-        }
-        for c := n.FirstChild; c != nil; c = c.NextSibling {
-            if src := extractSrc(c); src != "" {
-                return src
-            }
-        }
-        return ""
-    }
-    return extractSrc(doc)
+	doc, err := html.Parse(strings.NewReader(thumbnailContent))
+	if err != nil {
+		return ""
+	}
+
+	var extractSrc func(*html.Node) string
+	extractSrc = func(n *html.Node) string {
+		if n.Type == html.ElementNode && n.Data == "img" {
+			for _, attr := range n.Attr {
+				if attr.Key == "src" {
+					return attr.Val
+				}
+			}
+		}
+
+		for c := n.FirstChild; c != nil; c = c.NextSibling {
+			if src := extractSrc(c); src != "" {
+				return src
+			}
+		}
+
+		return ""
+	}
+
+	return extractSrc(doc)
 }
