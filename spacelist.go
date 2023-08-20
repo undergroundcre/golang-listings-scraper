@@ -1,11 +1,10 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"log"
-	"math/rand"
 	"net/http"
-	"os"
 	"strings"
 	"sync"
 	"time"
@@ -15,7 +14,7 @@ import (
 
 type ListingData struct {
 	URL        string
-	ImageSrc   string
+	Photo      string
 	Name       string
 	KeyBoldMap map[string]string
 }
@@ -45,19 +44,6 @@ func ScrapeListingsFromMainURLs() {
 		close(failedURLsChan)
 	}()
 
-	file, err := os.OpenFile("data.txt", os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0644)
-	if err != nil {
-		log.Fatal("Error opening file:", err)
-	}
-	defer file.Close()
-
-	failedFile, err := os.Create("failed_scrape.txt") // Create a file for failed URLs
-	if err != nil {
-		log.Fatal("Error creating failed scrape file:", err)
-	}
-	defer failedFile.Close()
-
-	// Add a ticker to track the time and determine when to pause the fetching
 	ticker := time.NewTicker(10 * time.Minute)
 	defer ticker.Stop()
 
@@ -67,31 +53,22 @@ func ScrapeListingsFromMainURLs() {
 			if !ok {
 				listingsChan = nil // Set to nil to avoid sending data to a closed channel
 			} else if listing.Name == "" || len(listing.KeyBoldMap) == 0 {
-				fmt.Fprintln(failedFile, listing.URL) // Write failed URL to the failed_scrape.txt file
+				log.Println("Failed to scrape data:", listing.URL)
 			} else {
-				fmt.Fprintf(file, "URL: %s\n", listing.URL)
-				fmt.Fprintf(file, "Location: %s\n", listing.Name)
-				fmt.Fprintf(file, "Photo: %s\n", listing.ImageSrc)
-				for key, boldFont := range listing.KeyBoldMap {
-					fmt.Fprintf(file, "%s: %s\n", key, boldFont)
-				}
-				fmt.Fprintln(file, strings.Repeat("-", 20))
+				sendDataToServer(listing) // Send the listing data to the server
 			}
 
 		case failedURL, ok := <-failedURLsChan:
 			if !ok {
 				failedURLsChan = nil // Set to nil to avoid sending data to a closed channel
 			} else {
-				fmt.Fprintln(failedFile, failedURL) // Write failed URL to the failed_scrape.txt file
+				log.Println("Failed to scrape data:", failedURL)
 			}
 
-		case <-ticker.C: // After every 10 minutes, pause and wait for a random duration
-			pauseDuration := 1 + rand.Intn(4) // Generates a random value between 1 to 5
-			pauseTime := time.Now()
-			fmt.Printf("[%s] Pausing fetching for %d minutes...\n", pauseTime.Format(time.RFC3339), pauseDuration)
-			time.Sleep(time.Duration(pauseDuration) * time.Minute)
-			resumeTime := time.Now()
-			fmt.Printf("[%s] Resuming fetching...\n", resumeTime.Format(time.RFC3339))
+		case <-ticker.C: // Pause for 2 minutes every 10 minutes
+			log.Println("Pausing for 2 minutes...")
+			time.Sleep(5 * time.Minute)
+			log.Println("Resuming fetching...")
 
 			if listingsChan == nil && failedURLsChan == nil {
 				return // Exit the loop if both channels are closed
@@ -116,7 +93,7 @@ func ScrapeListings(url string, listingsChan chan ListingData, failedURLsChan ch
 		resp, err := makeRequest(currentURL, headers)
 		if err != nil {
 			log.Println("Error making request:", err)
-			failedURLsChan <- currentURL // Send failed URL to the channel
+			failedURLsChan <- currentURL
 			return
 		}
 		defer resp.Body.Close()
@@ -124,7 +101,7 @@ func ScrapeListings(url string, listingsChan chan ListingData, failedURLsChan ch
 		doc, err := goquery.NewDocumentFromReader(resp.Body)
 		if err != nil {
 			log.Println("Error parsing HTML:", err)
-			failedURLsChan <- currentURL // Send failed URL to the channel
+			failedURLsChan <- currentURL
 			return
 		}
 
@@ -144,7 +121,7 @@ func ScrapeListings(url string, listingsChan chan ListingData, failedURLsChan ch
 			resp, err := makeRequest(fullURL, headers)
 			if err != nil {
 				log.Println("Error making request:", err)
-				failedURLsChan <- fullURL // Send failed URL to the channel
+				failedURLsChan <- fullURL
 				continue
 			}
 			defer resp.Body.Close()
@@ -152,7 +129,7 @@ func ScrapeListings(url string, listingsChan chan ListingData, failedURLsChan ch
 			doc, err := goquery.NewDocumentFromReader(resp.Body)
 			if err != nil {
 				log.Println("Error parsing HTML:", err)
-				failedURLsChan <- fullURL // Send failed URL to the channel
+				failedURLsChan <- fullURL
 				continue
 			}
 
@@ -174,17 +151,16 @@ func ScrapeListings(url string, listingsChan chan ListingData, failedURLsChan ch
 				}
 			})
 
-			// Scrape image src
 			var imageSrc string
 			doc.Find("a.listing-image").Each(func(_ int, s *goquery.Selection) {
-				if imageSrc == "" { // Only get the first image
+				if imageSrc == "" {
 					imageSrc, _ = s.Attr("href")
 				}
 			})
 
 			listingsChan <- ListingData{
 				URL:        fullURL,
-				ImageSrc:   imageSrc, // Add the image source to the struct
+				Photo:      imageSrc,
 				Name:       name,
 				KeyBoldMap: keyBoldMap,
 			}
@@ -211,5 +187,22 @@ func makeRequest(url string, headers map[string]string) (*http.Response, error) 
 	}
 
 	return resp, nil
+}
+
+func sendDataToServer(listing ListingData) {
+	jsonData, err := json.Marshal(listing)
+	if err != nil {
+		log.Println("Error marshaling data:", err)
+		return
+	}
+
+	resp, err := http.Post("http://localhost:3000/data", "application/json", strings.NewReader(string(jsonData)))
+	if err != nil {
+		log.Println("Error sending data:", err)
+		return
+	}
+	defer resp.Body.Close()
+
+	log.Println("Data sent to server")
 }
 

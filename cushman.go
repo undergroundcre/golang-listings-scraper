@@ -3,7 +3,6 @@ package main
 import (
 	"compress/gzip"
 	"encoding/json"
-	"fmt"
 	"io"
 	"io/ioutil"
 	"log"
@@ -148,8 +147,9 @@ func mapToURLValuez(m map[string]string) url.Values {
 }
 
 func writeResultToFile(file *os.File, result map[string]interface{}) {
+
 	title := result["title"]
-	address := result["address"]
+	address := result["address"].(string)
 	latitude := result["latitude"]
 	longitude := result["longitude"]
 	propertyBoxHTML := result["property_box"].(string)
@@ -162,7 +162,6 @@ func writeResultToFile(file *os.File, result map[string]interface{}) {
 	}
 
 	// Extract specific information from the parsed HTML
-	price := doc.Find(".price").Text()
 	area := strings.TrimSpace(doc.Find(".detail.inline-property-icons span[title='Area']").Text())
 
 	// Extract image URL
@@ -172,7 +171,20 @@ func writeResultToFile(file *os.File, result map[string]interface{}) {
     // Extract information from the <a href> link
     link, _ := doc.Find(".rem-box-maps a").Attr("href")
 
-    // Write extracted information to the file
-    file.WriteString(fmt.Sprintf("Title: %v\nLocation: %v\nLatitude: %v\nLongitude: %v\nPrice: %v\nArea: %v\nPhoto: %v\nURL: %v\n", title, address, latitude, longitude, price, area, imageURL, link))
-    file.WriteString("-------------------------------\n")
+   
+	data := Scraper{
+		URL:         link,
+		Asset:       title.(string),
+		Transaction: "",
+		Location:    address,
+		Size:        area,
+		Latitude:    latitude.(string),
+		Longitude:   longitude.(string),
+		Photo:       imageURL,
+	}
+
+	// Send the data to the datastore
+	sendDataToDatastoreloopnet(data)
+
+
 }
