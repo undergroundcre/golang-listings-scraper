@@ -66,7 +66,7 @@ func ScrapeListingsFromMainURLs() {
 			}
 
 		case <-ticker.C: // Pause for 2 minutes every 10 minutes
-			log.Println("Pausing for 2 minutes...")
+			log.Println("Pausing for 5 minutes...")
 			time.Sleep(5 * time.Minute)
 			log.Println("Resuming fetching...")
 

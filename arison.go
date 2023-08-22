@@ -20,6 +20,8 @@ type Scraper struct {
 	Latitude    string
 	Longitude   string
 	Photo       string
+	Price       string
+	LeaseRate   string
 }
 
 func fetchPageData(url string, payload map[string]string, headers map[string]string) (map[string]interface{}, error) {
@@ -101,7 +103,7 @@ func arison() {
 		"q[max_lease_rate_monthly_gteq]":          "",
 		"q[min_lease_rate_monthly_lteq]":          "",
 		"q[has_broker_ids][]":                    "",
-		"q[s][]":                                 "max_lease_rate desc",
+		"q[s][]":                                 "sale_price desc",
 	}
 
 	pageNumber := 0
@@ -121,12 +123,49 @@ func arison() {
 
 		for _, entry := range inventory {
 			entryMap := entry.(map[string]interface{})
-			url := entryMap["also_for_sale_or_lease_url"].(string)
+			url := entryMap["show_link"].(string)
 			if url != "" {
-				url = strings.Replace(url, "sale", "lease", -1)
 				assetType := entryMap["property_sub_type_name"].(string)
 				saleorlease := entryMap["sale"]
 				location := entryMap["address"].(string)
+				indexAttributes, ok := entryMap["index_attributes"].([]interface{})
+				if !ok {
+					fmt.Println(ok)
+				}
+				var leaseRate string
+				// Loop through the index_attributes to find the "Lease Rate" value
+				for _, attr := range indexAttributes {
+					if attrArray, isArray := attr.([]interface{}); isArray && len(attrArray) == 2 {
+						if label, isString := attrArray[0].(string); isString && label == "Lease Rate" {
+							if rate, isString := attrArray[1].(string); isString {
+								leaseRate = rate
+								break
+							}
+						}
+					}
+				}
+
+                var price string
+
+				// Access the index_attributes array
+				indexAttributez, okz := entryMap["index_attributes"].([]interface{})
+				if !okz {
+					fmt.Println(okz)
+				}
+
+				// Loop through the index_attributes to find the "Price" value
+				for _, attr := range indexAttributez {
+					if attrArray, isArray := attr.([]interface{}); isArray && len(attrArray) == 2 {
+						if label, isString := attrArray[0].(string); isString && label == "Price" {
+							if value, isString := attrArray[1].(string); isString {
+								price = value
+								break
+							}
+						}
+					}
+				}
+
+				
 				size := entryMap["size_summary"].(string)
 				photo := entryMap["photo_url"].(string)
 				Latitude, latOk := entryMap["latitude"].(float64)
@@ -148,6 +187,13 @@ func arison() {
 					transactiontype = "Lease"
 				}
 
+				var leasert string
+				if leaseRate != "" {
+					leasert = leaseRate
+				} else {
+					leasert = ""
+				}
+
 				scraperData := Scraper{
 					URL:         url,
 					Asset:       assetType,
@@ -157,6 +203,8 @@ func arison() {
 					Latitude:    LatitudeStr,
 					Longitude:   LongitudeStr,
 					Photo:       photo,
+					Price:       price,
+					LeaseRate:   leasert,
 				}
 
 				// Send data to datastore
