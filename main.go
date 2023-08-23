@@ -6,7 +6,6 @@ import (
 )
 
 func main() {
-loopnet()
 	// Track the time for the arison() function
 	// Always put arison first in the main function, if not it will mess up data.txt.
 	fmt.Println("arison started")

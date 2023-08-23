@@ -45,6 +45,7 @@ func loopnet() {
 			hasListings = false
 			break
 		}
+		canadianStates := []string{"AB", "BC", "MB", "NB", "NL", "NS", "NT", "NU", "ON", "PE", "QC", "SK", "YT"}
 
 		for _, placard := range placardElements.Nodes {
 			priceElement := goquery.NewDocumentFromNode(placard).Find("li[name=Price]")
@@ -54,9 +55,18 @@ func loopnet() {
 			}
 			headerLink := goquery.NewDocumentFromNode(placard).Find(".placard-content a")
 			headerURL, _ := headerLink.Attr("href")
+			
 
 			locationFull := goquery.NewDocumentFromNode(placard).Find(".header-col a")
 			location := locationFull.Text()
+
+			state := ""
+			for _, canadianState := range canadianStates {
+				if strings.Contains(location, canadianState) {
+					state = canadianState
+					break
+				}
+			}
 
 			assetTypeElement := goquery.NewDocumentFromNode(placard).Find(".placard-info .data-points-2c li:nth-child(2)")
 			assetType := strings.TrimSpace(assetTypeElement.Text())
@@ -92,6 +102,7 @@ func loopnet() {
 				Longitude:   lon,
 				Photo:       sourceuri,
 				LeaseRate:   price,
+				State:       state,
 			}
 
 			// Send the data to the datastore
