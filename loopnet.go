@@ -47,6 +47,11 @@ func loopnet() {
 		}
 
 		for _, placard := range placardElements.Nodes {
+			priceElement := goquery.NewDocumentFromNode(placard).Find("li[name=Price]")
+			var price string
+			if priceElement.Length() > 0 {
+				price = strings.TrimSpace(priceElement.Text())
+			}
 			headerLink := goquery.NewDocumentFromNode(placard).Find(".placard-content a")
 			headerURL, _ := headerLink.Attr("href")
 
@@ -86,6 +91,7 @@ func loopnet() {
 				Latitude:    lat,
 				Longitude:   lon,
 				Photo:       sourceuri,
+				LeaseRate:   price,
 			}
 
 			// Send the data to the datastore
@@ -105,7 +111,7 @@ func sendDataToDatastoreloopnet(data Scraper) {
 		return
 	}
 
-	resp, err := http.Post("http://localhost:8080/add", "application/json", strings.NewReader(string(jsonData)))
+	resp, err := http.Post("https://jsonserver-production-799f.up.railway.app/add", "application/json", strings.NewReader(string(jsonData)))
 	if err != nil {
 		fmt.Println("Failed to send data to datastore:", err)
 		return

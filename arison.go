@@ -22,6 +22,7 @@ type Scraper struct {
 	Photo       string
 	Price       string
 	LeaseRate   string
+	State       string
 }
 
 func fetchPageData(url string, payload map[string]string, headers map[string]string) (map[string]interface{}, error) {
@@ -127,6 +128,7 @@ func arison() {
 			if url != "" {
 				assetType := entryMap["property_sub_type_name"].(string)
 				saleorlease := entryMap["sale"]
+				state := entryMap["state"].(string)
 				location := entryMap["address"].(string)
 				indexAttributes, ok := entryMap["index_attributes"].([]interface{})
 				if !ok {
@@ -205,6 +207,7 @@ func arison() {
 					Photo:       photo,
 					Price:       price,
 					LeaseRate:   leasert,
+					State:       state,
 				}
 
 				// Send data to datastore
@@ -233,7 +236,7 @@ func sendDataToDatastore(data Scraper) {
 		return
 	}
 
-	resp, err := http.Post("http://localhost:8080/add", "application/json", strings.NewReader(string(jsonData)))
+	resp, err := http.Post("https://jsonserver-production-799f.up.railway.app/add", "application/json", strings.NewReader(string(jsonData)))
 	if err != nil {
 		log.Printf("Failed to send data to datastore: %s", err)
 		return

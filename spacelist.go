@@ -196,7 +196,7 @@ func sendDataToServer(listing ListingData) {
 		return
 	}
 
-	resp, err := http.Post("http://localhost:3000/data", "application/json", strings.NewReader(string(jsonData)))
+	resp, err := http.Post("https://spacelistmiddlescript-production.up.railway.app/data", "application/json", strings.NewReader(string(jsonData)))
 	if err != nil {
 		log.Println("Error sending data:", err)
 		return

@@ -9,7 +9,7 @@ import (
 )
 
 func cbre() {
-	url := "https://www.cbre.ca/property-api/propertylistings/query?Site=ca-comm&RadiusType=Kilometers&CurrencyCode=CAD&Unit=sqft&Interval=Annually&Common.HomeSite=ca-comm&lon=-106.346771&Lat=56.130366&Lon=-122.583046&PolygonFilters=%5B%5B%2270%2C-50%22%2C%2242%2C-50%22%2C%2242%2C-142%22%2C%2270%2C-142%22%5D%5D&Common.Aspects=isSale&PageSize=400&Page=1&Sort=desc(Common.LastUpdated)&Common.UsageType=Office&Common.IsParent=true&_select=Dynamic.PrimaryImage,Common.ActualAddress,Common.Charges,Common.NumberOfBedrooms,Common.PrimaryKey,Common.UsageType,Common.Coordinate,Common.Aspects,Common.ListingCount,Common.IsParent,Common.HomeSite,Common.Agents,Common.PropertySubType,Common.ContactGroup,Common.Highlights,Common.Walkthrough,Common.MinimumSize,Common.MaximumSize,Common.TotalSize,Common.GeoLocation,Common.Sizes"
+	url := "https://www.cbre.ca/property-api/propertylistings/query?Site=ca-comm&RadiusType=Kilometers&CurrencyCode=CAD&Unit=sqft&Interval=Annually&Common.HomeSite=ca-comm&lon=-106.346771&Lat=56.130366&Lon=-122.583046&PolygonFilters=%5B%5B%2270%2C-50%22%2C%2242%2C-50%22%2C%2242%2C-142%22%2C%2270%2C-142%22%5D%5D&Common.Aspects=isLetting,isSale&PageSize=5000&Page=1&Sort=desc(Common.LastUpdated)&Common.UsageType=Office%2CRetail%2CIndustrial%2CLand%2CMultifamily%2CResidential%2CReligious%2COutdoorRecreational%2CIndoorRecreational%2CHotels%2CHealthcare%2CEducation%26Culture%2COpenStorage&Common.IsParent=true&_select=Dynamic.PrimaryImage,Common.ActualAddress,Common.Charges,Common.NumberOfBedrooms,Common.PrimaryKey,Common.UsageType,Common.Coordinate,Common.Aspects,Common.ListingCount,Common.IsParent,Common.HomeSite,Common.Agents,Common.PropertySubType,Common.ContactGroup,Common.Highlights,Common.Walkthrough,Common.MinimumSize,Common.MaximumSize,Common.TotalSize,Common.GeoLocation,Common.Sizes"
 	headers := map[string]string{
 		"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36",
 	}
@@ -61,6 +61,41 @@ func cbre() {
 				if aspects, ok := documentData["Common.Aspects"].([]interface{}); ok && len(aspects) > 0 {
 					transactionType = aspects[0].(string)
 				}
+				var leaseprice string
+				var salePrice string // Use an appropriate data type for the amount, e.g., int
+				
+				if charges, ok := documentData["Common.Charges"].([]interface{}); ok {
+					if len(charges) > 2 { // Ensure that there's an element with index 2
+						chargeData, isMap := charges[2].(map[string]interface{})
+						if isMap {
+							if chargeKind, exists := chargeData["Common.ChargeKind"].(string); exists {
+								if chargeKind == "SalePrice" {
+									if amountData, hasAmount := chargeData["Common.Amount"].(float64); hasAmount {
+										salePrice = fmt.Sprintf("%.2f", amountData) // Convert to string with 2 decimal places
+									}
+								} else {
+									if chargeAmount, exists := chargeData["Common.Amount"].(float64); exists {
+										leaseprice = fmt.Sprintf("%.2f", chargeAmount) // Convert to string with 2 decimal places
+									}
+								}
+							}
+						}
+					}
+				}
+				
+				
+
+				var propertytype string
+				if transactionType == "isSale" {
+					propertytype = "Sale"
+				} else if transactionType == "isLetting" {
+					propertytype = "Lease"
+				}
+
+				var state string
+				if statez, ok := documentData["Common.ActualAddress"].(map[string]interface{}); ok {
+					state, _ = statez["Common.Region"].(string)
+				}
 
 				var lon, lat float64
 				if coordinate, ok := documentData["Common.Coordinate"].(map[string]interface{}); ok {
@@ -97,12 +132,15 @@ func cbre() {
 				dataToSend = append(dataToSend, Scraper{
 					URL:         constructedURL,
 					Asset:       usageType,
-					Transaction: transactionType,
+					Transaction: propertytype,
 					Location:    line1,
 					Size:        fmt.Sprintf("%.2f %s", size, units),
 					Latitude:    fmt.Sprintf("%f", lat),
 					Longitude:   fmt.Sprintf("%f", lon),
 					Photo:       sourceUri,
+					State:       state,
+					LeaseRate:   leaseprice,
+					Price:       salePrice,
 				})
 			}
 		}
@@ -125,7 +163,7 @@ func sendDataToDatastorecbre(data Scraper) {
 		return
 	}
 
-	resp, err := http.Post("http://localhost:8080/add", "application/json", strings.NewReader(string(jsonData)))
+	resp, err := http.Post("https://jsonserver-production-799f.up.railway.app/add", "application/json", strings.NewReader(string(jsonData)))
 	if err != nil {
 		fmt.Println("Failed to send data to datastore:", err)
 		return
