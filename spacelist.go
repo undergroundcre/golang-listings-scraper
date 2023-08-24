@@ -44,7 +44,7 @@ func ScrapeListingsFromMainURLs() {
 		close(failedURLsChan)
 	}()
 
-	ticker := time.NewTicker(10 * time.Minute)
+	ticker := time.NewTicker(5 * time.Minute)
 	defer ticker.Stop()
 
 	for {
@@ -66,8 +66,8 @@ func ScrapeListingsFromMainURLs() {
 			}
 
 		case <-ticker.C: // Pause for 2 minutes every 10 minutes
-			log.Println("Pausing for 5 minutes...")
-			time.Sleep(5 * time.Minute)
+			log.Println("Pausing for 7 minutes...")
+			time.Sleep(7 * time.Minute)
 			log.Println("Resuming fetching...")
 
 			if listingsChan == nil && failedURLsChan == nil {
