@@ -126,7 +126,7 @@ func cbre() {
 					}
 				}
 
-				constructedURL := fmt.Sprintf("https://www.cbre.ca/property-details/%s", primaryKey)
+				constructedURL := fmt.Sprintf("https://www.cbre.ca/properties/commercial-space/details/%s", primaryKey)
 
 				// Add the scraped data to the array
 				dataToSend = append(dataToSend, Scraper{
