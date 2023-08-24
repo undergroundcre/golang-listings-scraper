@@ -70,13 +70,9 @@ func ScrapeListingsFromMainURLs() {
 			time.Sleep(5 * time.Minute)
 			log.Println("Resuming fetching...")
 
-			if listingsChan == nil && failedURLsChan == nil {
+			if failedURLsChan == nil {
 				return // Exit the loop if both channels are closed
 			}
-		}
-
-		if listingsChan == nil && failedURLsChan == nil {
-			break // Exit the loop if both channels are closed
 		}
 	}
 }
