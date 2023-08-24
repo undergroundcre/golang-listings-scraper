@@ -46,6 +46,7 @@ func ScrapeListingsFromMainURLs() {
 
 	ticker := time.NewTicker(5 * time.Minute)
 	defer ticker.Stop()
+        var isTickerPaused bool // Flag to pause the ticker during sleep
 
 	for {
 		select {
@@ -64,11 +65,18 @@ func ScrapeListingsFromMainURLs() {
 			} else {
 				log.Println("Failed to scrape data:", failedURL)
 			}
+			
+		case <-ticker.C:
+			if isTickerPaused {
+				log.Println("Ticker paused.")
+				continue
+			}
 
-		case <-ticker.C: // Pause for 2 minutes every 10 minutes
-			log.Println("Pausing for 7 minutes...")
-			time.Sleep(7 * time.Minute)
+			log.Println("Pausing for 5 minutes...")
+			isTickerPaused = true
+			time.Sleep(5 * time.Minute)
 			log.Println("Resuming fetching...")
+			isTickerPaused = false
 
 			if listingsChan == nil && failedURLsChan == nil {
 				return // Exit the loop if both channels are closed
