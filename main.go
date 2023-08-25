@@ -6,6 +6,21 @@ import (
 )
 
 func main() {
+		// Infinite loop to run the tasks every day at 11 PM
+		for {
+			// Calculate the next 11 PM
+			now := time.Now()
+			next11PM := time.Date(now.Year(), now.Month(), now.Day(), 23, 0, 0, 0, now.Location())
+			if next11PM.Before(now) {
+				next11PM = next11PM.Add(24 * time.Hour)
+			}
+	
+			// Calculate the duration until the next 11 PM
+			durationUntilNext11PM := next11PM.Sub(now)
+	
+			// Sleep until the next 11 PM
+			time.Sleep(durationUntilNext11PM)
+	cbre()
 	// Track the time for the arison() function
 	// Always put arison first in the main function, if not it will mess up data.txt.
 	fmt.Println("arison started")
@@ -61,4 +76,11 @@ func main() {
 	endTimeScrape := time.Now()
 	totalTimeScrape := endTimeScrape.Sub(startTimeScrape)
 	fmt.Printf("spacelist execution time: %s\n", totalTimeScrape)
+			// Print a message to indicate the tasks have been executed
+			fmt.Println("Tasks executed at", time.Now())
+
+			// Sleep for the remaining duration of the day before starting the loop again
+			durationUntilMidnight := time.Until(time.Date(now.Year(), now.Month(), now.Day(), 23, 59, 59, 0, now.Location()))
+			time.Sleep(durationUntilMidnight)
+		}
 }
