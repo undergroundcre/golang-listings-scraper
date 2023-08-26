@@ -20,62 +20,68 @@ type ListingData struct {
 }
 
 func ScrapeListingsFromMainURLs() {
-	mainURLs := []string{
-		"https://e85.spacelist.ca/listings",
-		"https://www.spacelist.ca/listings/ab",
-		"https://e149.spacelist.ca/listings",
-	}
+    mainURLs := []string{
+        "https://e85.spacelist.ca/listings",
+        "https://www.spacelist.ca/listings/ab",
+        "https://e149.spacelist.ca/listings",
+    }
 
-	var wg sync.WaitGroup
-	listingsChan := make(chan ListingData)
-	failedURLsChan := make(chan string) // Channel to hold failed URLs
+    var wg sync.WaitGroup
+    listingsChan := make(chan ListingData)
+    failedURLsChan := make(chan string) // Channel to hold failed URLs
 
-	for _, mainURL := range mainURLs {
-		wg.Add(1)
-		go func(url string) {
-			defer wg.Done()
-			ScrapeListings(url, listingsChan, failedURLsChan)
-		}(mainURL)
-	}
+    for _, mainURL := range mainURLs {
+        wg.Add(1)
+        go func(url string) {
+            defer wg.Done()
+            ScrapeListings(url, listingsChan, failedURLsChan)
+        }(mainURL)
+    }
 
-	go func() {
-		wg.Wait()
-		close(listingsChan)
-		close(failedURLsChan)
-	}()
+    go func() {
+        wg.Wait()
+        close(listingsChan)
+        close(failedURLsChan)
+    }()
 
-	ticker := time.NewTicker(5* time.Minute)
-	defer ticker.Stop()
+    ticker := time.NewTicker(5 * time.Minute)
+    defer ticker.Stop()
 
-	for {
-		select {
-		case listing, ok := <-listingsChan:
-			if !ok {
-				listingsChan = nil // Set to nil to avoid sending data to a closed channel
-			} else if listing.Name == "" || len(listing.KeyBoldMap) == 0 {
-				log.Println("Failed to scrape data:", listing.URL)
-			} else {
-				sendDataToServer(listing) // Send the listing data to the server
-			}
+    for {
+        select {
+        case listing, ok := <-listingsChan:
+            if !ok {
+                listingsChan = nil // Set to nil to avoid sending data to a closed channel
+            } else if listing.Name == "" || len(listing.KeyBoldMap) == 0 {
+                log.Println("Failed to scrape data:", listing.URL)
+            } else {
+                sendDataToServer(listing) // Send the listing data to the server
+            }
 
-		case failedURL, ok := <-failedURLsChan:
-			if !ok {
-				failedURLsChan = nil // Set to nil to avoid sending data to a closed channel
-			} else {
-				log.Println("Failed to scrape data:", failedURL)
-			}
+        case failedURL, ok := <-failedURLsChan:
+            if !ok {
+                failedURLsChan = nil // Set to nil to avoid sending data to a closed channel
+            } else {
+                log.Println("Failed to scrape data:", failedURL)
+            }
+        }
 
-		case <-ticker.C: // Pause for 2 minutes every 10 minutes
-			log.Println("Pausing for 10 minutes...")
-			time.Sleep(10 * time.Minute)
-			log.Println("Resuming fetching...")
+        // Pausing code should be placed here, outside of the select statement
+        select {
+        case <-ticker.C:
+            log.Println("Pausing for 5 minutes...")
+            time.Sleep(5 * time.Minute)
+            log.Println("Resuming fetching...")
 
-			if failedURLsChan == nil {
-				return // Exit the loop if both channels are closed
-			}
-		}
-	}
+            if failedURLsChan == nil {
+                return
+            }
+        default:
+            // Continue the loop if the ticker interval has not passed
+        }
+    }
 }
+
 
 func ScrapeListings(url string, listingsChan chan ListingData, failedURLsChan chan string) {
 	headers := map[string]string{
