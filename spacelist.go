@@ -108,6 +108,12 @@ func ScrapeListings(url string, listingsChan chan ListingData, failedURLsChan ch
 			return
 		}
 
+		        // Check if the page contains the "no-result" div
+        if doc.Find("div.no-result").Length() > 0 {
+            log.Println("No active listings found on this page. Stopping scraping.")
+            return
+        }
+
 		var hrefs []string
 		doc.Find("a.listing-card").Each(func(_ int, s *goquery.Selection) {
 			href, _ := s.Attr("href")
