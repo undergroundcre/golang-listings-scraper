@@ -44,7 +44,7 @@ func ScrapeListingsFromMainURLs() {
 		close(failedURLsChan)
 	}()
 
-	ticker := time.NewTicker(20* time.Minute)
+	ticker := time.NewTicker(5* time.Minute)
 	defer ticker.Stop()
 
 	for {
