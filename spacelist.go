@@ -44,8 +44,8 @@ func ScrapeListingsFromMainURLs() {
         close(failedURLsChan)
     }()
 
-    ticker := time.NewTicker(5 * time.Minute)
-    defer ticker.Stop()
+    pauseDuration := 5 * time.Minute
+    nextPauseTime := time.Now().Add(pauseDuration)
 
     for {
         select {
@@ -66,21 +66,22 @@ func ScrapeListingsFromMainURLs() {
             }
         }
 
-        // Pausing code should be placed here, outside of the select statement
-        select {
-        case <-ticker.C:
+        // Check if it's time to pause
+        if time.Now().After(nextPauseTime) {
             log.Println("Pausing for 5 minutes...")
             time.Sleep(5 * time.Minute)
             log.Println("Resuming fetching...")
+            
+            // Update the next pause time
+            nextPauseTime = time.Now().Add(pauseDuration)
 
             if failedURLsChan == nil {
                 return
             }
-        default:
-            // Continue the loop if the ticker interval has not passed
         }
     }
 }
+
 
 
 func ScrapeListings(url string, listingsChan chan ListingData, failedURLsChan chan string) {
