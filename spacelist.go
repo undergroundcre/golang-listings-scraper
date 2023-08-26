@@ -79,6 +79,9 @@ func ScrapeListingsFromMainURLs() {
                 return
             }
         }
+	    		if listingsChan == nil && failedURLsChan == nil {
+			break // Exit the loop if both channels are closed
+		}
     }
 }
 
