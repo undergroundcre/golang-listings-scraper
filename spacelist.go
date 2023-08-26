@@ -69,7 +69,7 @@ func ScrapeListingsFromMainURLs() {
         // Check if it's time to pause
         if time.Now().After(nextPauseTime) {
             log.Println("Pausing for 5 minutes...")
-            time.Sleep(5 * time.Minute)
+            time.Sleep(10 * time.Minute)
             log.Println("Resuming fetching...")
             
             // Update the next pause time
