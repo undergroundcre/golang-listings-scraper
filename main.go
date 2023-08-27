@@ -6,6 +6,18 @@ import (
 )
 
 func main() {
+	for {
+		currentTime := time.Now()
+		nextExecutionTime := time.Date(currentTime.Year(), currentTime.Month(), currentTime.Day(), 18, 0, 0, 0, currentTime.Location())
+		if currentTime.After(nextExecutionTime) {
+			nextExecutionTime = nextExecutionTime.Add(24 * time.Hour)
+		}
+
+		sleepDuration := nextExecutionTime.Sub(currentTime)
+		fmt.Printf("Next execution time: %s\n", nextExecutionTime)
+		fmt.Printf("Sleeping for %s\n", sleepDuration)
+
+		time.Sleep(sleepDuration)
 	// Track the time for the arison() function
 	// Always put arison first in the main function, if not it will mess up data.txt.
 	fmt.Println("arison started")
@@ -63,3 +75,4 @@ func main() {
 	fmt.Printf("spacelist execution time: %s\n", totalTimeScrape)
 
 }
+		}
