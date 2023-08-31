@@ -24,6 +24,7 @@ func ScrapeListingsFromMainURLs() {
         "https://e85.spacelist.ca/listings",
         "https://www.spacelist.ca/listings/ab",
         "https://e149.spacelist.ca/listings",
+	"https://e798.spacelist.ca/listings",
     }
 
     var wg sync.WaitGroup
