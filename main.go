@@ -27,6 +27,13 @@ func main() {
 	totalTimeArison := endTimeArison.Sub(startTimeArison)
 	fmt.Printf("arison execution time: %s\n", totalTimeArison)
 
+	fmt.Println("yeg started")
+	startTimeYeg := time.Now()
+	yeg()
+	endTimeYeg := time.Now()
+	totalTimeYeg := endTimeYeg.Sub(startTimeYeg)
+	fmt.Printf("arison execution time: %s\n", totalTimeYeg)
+		
 	fmt.Println("cbre started")
 	startTimeCBRE := time.Now()
 	cbre()
