@@ -8,7 +8,7 @@ import (
 func main() {
 	for {
 		currentTime := time.Now()
-		nextExecutionTime := time.Date(currentTime.Year(), currentTime.Month(), currentTime.Day(), 18, 0, 0, 0, currentTime.Location())
+		nextExecutionTime := time.Date(currentTime.Year(), currentTime.Month(), currentTime.Day(), 13, 0, 0, 0, currentTime.Location())
 		if currentTime.After(nextExecutionTime) {
 			nextExecutionTime = nextExecutionTime.Add(24 * time.Hour)
 		}
