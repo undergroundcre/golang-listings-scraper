@@ -34,6 +34,13 @@ func main() {
 	totalTimeRcedm := endTimeRcedm.Sub(startTimeRcedm)
 	fmt.Printf("rcedm execution time: %s\n", totalTimeRcedm)
 
+	fmt.Println("tag started")
+	startTimetag := time.Now()
+	tag()
+	endTimetag := time.Now()
+	totalTimetag := endTimetag.Sub(startTimetag)
+	fmt.Printf("tag execution time: %s\n", totalTimetag)
+
 
 	fmt.Println("yeg started")
 	startTimeYeg := time.Now()
