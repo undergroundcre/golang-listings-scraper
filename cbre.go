@@ -63,7 +63,7 @@ func cbre() {
 				}
 				var leaseprice string
 				var salePrice string // Use an appropriate data type for the amount, e.g., int
-				
+
 				if charges, ok := documentData["Common.Charges"].([]interface{}); ok {
 					if len(charges) > 2 { // Ensure that there's an element with index 2
 						chargeData, isMap := charges[2].(map[string]interface{})
@@ -82,8 +82,6 @@ func cbre() {
 						}
 					}
 				}
-				
-				
 
 				var propertytype string
 				if transactionType == "isSale" {

@@ -20,73 +20,71 @@ type ListingData struct {
 }
 
 func ScrapeListingsFromMainURLs() {
-    mainURLs := []string{
-        "https://e85.spacelist.ca/listings",
-        "https://www.spacelist.ca/listings/ab",
-        "https://e149.spacelist.ca/listings",
-	"https://e798.spacelist.ca/listings",
-    }
+	mainURLs := []string{
+		"https://e85.spacelist.ca/listings",
+		"https://www.spacelist.ca/listings/ab",
+		"https://e149.spacelist.ca/listings",
+		"https://e798.spacelist.ca/listings",
+	}
 
-    var wg sync.WaitGroup
-    listingsChan := make(chan ListingData)
-    failedURLsChan := make(chan string) // Channel to hold failed URLs
+	var wg sync.WaitGroup
+	listingsChan := make(chan ListingData)
+	failedURLsChan := make(chan string) // Channel to hold failed URLs
 
-    for _, mainURL := range mainURLs {
-        wg.Add(1)
-        go func(url string) {
-            defer wg.Done()
-            ScrapeListings(url, listingsChan, failedURLsChan)
-        }(mainURL)
-    }
+	for _, mainURL := range mainURLs {
+		wg.Add(1)
+		go func(url string) {
+			defer wg.Done()
+			ScrapeListings(url, listingsChan, failedURLsChan)
+		}(mainURL)
+	}
 
-    go func() {
-        wg.Wait()
-        close(listingsChan)
-        close(failedURLsChan)
-    }()
+	go func() {
+		wg.Wait()
+		close(listingsChan)
+		close(failedURLsChan)
+	}()
 
-    pauseDuration := 5 * time.Minute
-    nextPauseTime := time.Now().Add(pauseDuration)
+	pauseDuration := 5 * time.Minute
+	nextPauseTime := time.Now().Add(pauseDuration)
 
-    for {
-        select {
-        case listing, ok := <-listingsChan:
-            if !ok {
-                listingsChan = nil // Set to nil to avoid sending data to a closed channel
-            } else if listing.Name == "" || len(listing.KeyBoldMap) == 0 {
-                log.Println("Failed to scrape data:", listing.URL)
-            } else {
-                sendDataToServer(listing) // Send the listing data to the server
-            }
+	for {
+		select {
+		case listing, ok := <-listingsChan:
+			if !ok {
+				listingsChan = nil // Set to nil to avoid sending data to a closed channel
+			} else if listing.Name == "" || len(listing.KeyBoldMap) == 0 {
+				log.Println("Failed to scrape data:", listing.URL)
+			} else {
+				sendDataToServer(listing) // Send the listing data to the server
+			}
 
-        case failedURL, ok := <-failedURLsChan:
-            if !ok {
-                failedURLsChan = nil // Set to nil to avoid sending data to a closed channel
-            } else {
-                log.Println("Failed to scrape data:", failedURL)
-            }
-        }
+		case failedURL, ok := <-failedURLsChan:
+			if !ok {
+				failedURLsChan = nil // Set to nil to avoid sending data to a closed channel
+			} else {
+				log.Println("Failed to scrape data:", failedURL)
+			}
+		}
 
-        // Check if it's time to pause
-        if time.Now().After(nextPauseTime) {
-            log.Println("Pausing for 5 minutes...")
-            time.Sleep(10 * time.Minute)
-            log.Println("Resuming fetching...")
-            
-            // Update the next pause time
-            nextPauseTime = time.Now().Add(pauseDuration)
+		// Check if it's time to pause
+		if time.Now().After(nextPauseTime) {
+			log.Println("Pausing for 5 minutes...")
+			time.Sleep(10 * time.Minute)
+			log.Println("Resuming fetching...")
 
-            if failedURLsChan == nil {
-                return
-            }
-        }
-	    		if listingsChan == nil && failedURLsChan == nil {
+			// Update the next pause time
+			nextPauseTime = time.Now().Add(pauseDuration)
+
+			if failedURLsChan == nil {
+				return
+			}
+		}
+		if listingsChan == nil && failedURLsChan == nil {
 			break // Exit the loop if both channels are closed
 		}
-    }
+	}
 }
-
-
 
 func ScrapeListings(url string, listingsChan chan ListingData, failedURLsChan chan string) {
 	headers := map[string]string{
@@ -112,11 +110,11 @@ func ScrapeListings(url string, listingsChan chan ListingData, failedURLsChan ch
 			return
 		}
 
-		        // Check if the page contains the "no-result" div
-        if doc.Find("div.no-result").Length() > 0 {
-            log.Println("No active listings found on this page. Stopping scraping.")
-            return
-        }
+		// Check if the page contains the "no-result" div
+		if doc.Find("div.no-result").Length() > 0 {
+			log.Println("No active listings found on this page. Stopping scraping.")
+			return
+		}
 
 		var hrefs []string
 		doc.Find("a.listing-card").Each(func(_ int, s *goquery.Selection) {

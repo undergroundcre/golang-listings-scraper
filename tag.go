@@ -10,7 +10,6 @@ import (
 	"strings"
 )
 
-
 func extractPageURLsAndImages(body string) []Scraper {
 	re := regexp.MustCompile(`image:\s+"([^"]+)",\s+page_url:\s+"([^"]+)"[\s\S]+?propertyType:\s+"([^"]*)?"[\s\S]+?price:\s+"([^"]*)?"`)
 	matches := re.FindAllStringSubmatch(body, -1)

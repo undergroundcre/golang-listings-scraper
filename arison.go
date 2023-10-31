@@ -12,17 +12,21 @@ import (
 )
 
 type Scraper struct {
-	URL         string
-	Asset       string
-	Transaction string
-	Location    string
-	Size        string
-	Latitude    string
-	Longitude   string
-	Photo       string
-	Price       string
-	LeaseRate   string
-	State       string
+	ID          uint   `json:"ID" gorm:"primaryKey;autoIncrement"`
+	URL         string `json:"URL"`
+	Asset       string `json:"Asset"`
+	Transaction string `json:"Transaction"`
+	Location    string `json:"Location"`
+	Size        string `json:"Size"`
+	Latitude    string `json:"Latitude"`
+	Longitude   string `json:"Longitude"`
+	Photo       string `json:"Photo"`
+	Price       string `json:"Price"`
+	LeaseRate   string `json:"LeaseRate"`
+	State       string `json:"State"`
+	Recent      bool   `json:"Recent"`
+	New_Date    string `json:"New_Date"`
+	Flagged     bool   `json:"Flagged"`
 }
 
 func fetchPageData(url string, payload map[string]string, headers map[string]string) (map[string]interface{}, error) {
@@ -77,34 +81,34 @@ func arison() {
 	}
 
 	payload := map[string]string{
-		"utf8":                                    "✓",
-		"polygon_geojson":                         "",
-		"lat_min":                                 "",
-		"lat_max":                                 "",
-		"lng_min":                                 "",
-		"lng_max":                                 "",
-		"mobile_lat_min":                          "",
-		"mobile_lat_max":                          "",
-		"mobile_lng_min":                          "",
-		"mobile_lng_max":                          "",
-		"page":                                    "0",
-		"map_display_limit":                       "5000",
-		"map_type":                                "roadmap",
-		"country_restrictions":                    "ca",
-		"custom_map_marker_url":                   "/s3.amazonaws.com/buildout-production/brandings/6929/profile_photo/small.png?1600277316",
-		"use_marker_clusterer":                    "true",
-		"placesAutoComplete":                      "",
-		"q[type_use_offset_eq_any][]":             "",
-		"q[sale_or_lease_eq]":                     "",
-		"q[state_eq_any][]":                       "",
+		"utf8":                        "✓",
+		"polygon_geojson":             "",
+		"lat_min":                     "",
+		"lat_max":                     "",
+		"lng_min":                     "",
+		"lng_max":                     "",
+		"mobile_lat_min":              "",
+		"mobile_lat_max":              "",
+		"mobile_lng_min":              "",
+		"mobile_lng_max":              "",
+		"page":                        "0",
+		"map_display_limit":           "5000",
+		"map_type":                    "roadmap",
+		"country_restrictions":        "ca",
+		"custom_map_marker_url":       "/s3.amazonaws.com/buildout-production/brandings/6929/profile_photo/small.png?1600277316",
+		"use_marker_clusterer":        "true",
+		"placesAutoComplete":          "",
+		"q[type_use_offset_eq_any][]": "",
+		"q[sale_or_lease_eq]":         "",
+		"q[state_eq_any][]":           "",
 		"q[listings_data_max_space_available_on_market_gteq]": "",
 		"q[listings_data_min_space_available_on_market_lteq]": "",
-		"q[max_lease_rate_gteq]":                  "",
-		"q[min_lease_rate_lteq]":                  "",
-		"q[max_lease_rate_monthly_gteq]":          "",
-		"q[min_lease_rate_monthly_lteq]":          "",
-		"q[has_broker_ids][]":                    "",
-		"q[s][]":                                 "sale_price desc",
+		"q[max_lease_rate_gteq]":                              "",
+		"q[min_lease_rate_lteq]":                              "",
+		"q[max_lease_rate_monthly_gteq]":                      "",
+		"q[min_lease_rate_monthly_lteq]":                      "",
+		"q[has_broker_ids][]":                                 "",
+		"q[s][]":                                              "sale_price desc",
 	}
 
 	pageNumber := 0
@@ -147,7 +151,7 @@ func arison() {
 					}
 				}
 
-                var price string
+				var price string
 
 				// Access the index_attributes array
 				indexAttributez, okz := entryMap["index_attributes"].([]interface{})
@@ -167,7 +171,6 @@ func arison() {
 					}
 				}
 
-				
 				size := entryMap["size_summary"].(string)
 				photo := entryMap["photo_url"].(string)
 				Latitude, latOk := entryMap["latitude"].(float64)

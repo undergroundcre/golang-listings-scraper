@@ -55,7 +55,6 @@ func loopnet() {
 			}
 			headerLink := goquery.NewDocumentFromNode(placard).Find(".placard-content a")
 			headerURL, _ := headerLink.Attr("href")
-			
 
 			locationFull := goquery.NewDocumentFromNode(placard).Find(".header-col a")
 			location := locationFull.Text()
@@ -71,7 +70,7 @@ func loopnet() {
 			assetTypeElement := goquery.NewDocumentFromNode(placard).Find(".placard-info .data-points-2c li:nth-child(2)")
 			assetType := strings.TrimSpace(assetTypeElement.Text())
 			assetTypeParts := strings.SplitN(assetType, "SF", 2)
-			
+
 			var size, usagetype string
 			if len(assetTypeParts) > 1 {
 				size = strings.TrimSpace(assetTypeParts[0] + "SF")
@@ -137,4 +136,3 @@ func sendDataToDatastoreloopnet(data Scraper) {
 
 	fmt.Println("Data sent to datastore:", string(body))
 }
-
