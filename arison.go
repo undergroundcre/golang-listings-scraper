@@ -239,7 +239,7 @@ func sendDataToDatastore(data Scraper) {
 		return
 	}
 
-	resp, err := http.Post("https://jsonserver-production-799f.up.railway.app/add", "application/json", strings.NewReader(string(jsonData)))
+	resp, err := http.Post("https://jsonserver-production-0d88.up.railway.app/add", "application/json", strings.NewReader(string(jsonData)))
 	if err != nil {
 		log.Printf("Failed to send data to datastore: %s", err)
 		return

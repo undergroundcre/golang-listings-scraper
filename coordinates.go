@@ -14,7 +14,7 @@ import (
 var db *gorm.DB
 
 func locationToCoordinate() {
-	dsn := "root:byyKT2xIMRbaSzOjIFWS@tcp(containers-us-west-53.railway.app:5714)/scraper?timeout=60s"
+	dsn := "root:CBCFeeEae6b-52aCf15g4EBAcA4Bcd-6@tcp(monorail.proxy.rlwy.net:26586)/scraper?timeout=60s"
 	var err error
 	db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {

@@ -94,7 +94,7 @@ func tag() {
 
 func sendDataToServerz(data Scraper) {
 	jsonData := fmt.Sprintf(`{"URL": "%s", "Transaction": "%s", "Photo": "%s", "Price": "%s"}`, data.URL, data.Asset, data.Photo, data.Price)
-	resp, err := http.Post("https://jsonserver-production-799f.up.railway.app/add", "application/json", strings.NewReader(jsonData))
+	resp, err := http.Post("https://jsonserver-production-0d88.up.railway.app/add", "application/json", strings.NewReader(jsonData))
 	if err != nil {
 		log.Println("Error sending data:", err)
 		return
