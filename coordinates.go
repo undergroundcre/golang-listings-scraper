@@ -29,7 +29,7 @@ func locationToCoordinate() {
 	for _, scraper := range scrapers {
 		// Send a request to the Google Maps API to geocode the location
 		geocodeURL := "https://maps.googleapis.com/maps/api/geocode/json"
-		apiKey := "AIzaSyAZCAEdvrHRfJwNB8LjR_oV_2V0xybmkkg" // Replace with your API key
+		apiKey := "AIzaSyAYjB1P6H3zXAU-ETAExNvJ4iXE47lXtAI" // Replace with your API key
 		location := scraper.Location
 		fmt.Println(location)
 
